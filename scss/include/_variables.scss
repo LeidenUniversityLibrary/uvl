@@ -1,0 +1,107 @@
+
+$bodycolor: #fff;
+
+$color_blue1: #001158;
+$color_blue2: #012168;
+$color_blue3: #7f88ab;
+$color_blue4: #8088ac;
+$color_blue5: #ccd1e3;
+
+$color_gray1: #333;
+$color_gray2: #666; 
+$color_gray3: #c9c9c9;
+$color_gray4: #d9d9d9;
+$color_gray5: #e9e9e9;
+$color_gray6: #f5f5f5;
+
+$color_ochre1: #b27f2b;
+
+$bannerleftcolor: #187cb8;
+$bannerrightcolor: #c5c6c8;
+$contentcolor: #f4f5ef;
+$sidebarcolor: #ebebe9;
+$contenttextcolor1: #111;
+$contenttextcolor2: #333;
+ 
+$linkcolor1: $color_blue2;
+$linkcolorfooter: #B7CBDB;
+
+$textcolor: #444;
+
+$breakpoints: (
+  'small': 480px,
+  'medium': 768px,  
+  'large': 1020px
+);
+
+
+// VRhythm
+// ===========================================================
+$base-font-size: 16px; 
+$base-line-height: 26px; 
+//$rhythm-unit: "rem";
+$rem-with-px-fallback: true;
+
+// Modular scale 
+$modscale : 1.3;
+// http://www.modularscale.com/
+// ===========================================================
+$type-scale: (
+	tiny: (
+		font-size: $base-font-size / pow($modscale,2),
+		base-lines: 0.5
+	),
+	small: (
+		font-size: $base-font-size / $modscale,
+		base-lines: 0.75
+	),
+	base: (
+		font-size: $base-font-size,
+		base-lines: 1
+	),
+	medium: (
+		font-size: $base-font-size * $modscale,
+		base-lines: 1
+	),
+	large: (
+		font-size: $base-font-size * pow($modscale,2),
+		base-lines: 1
+	),
+	xlarge: (
+		font-size: $base-font-size * pow($modscale,3),
+		base-lines: 2
+	),
+	xxlarge: (
+		font-size: $base-font-size * pow($modscale,4),
+		base-lines: 2 
+	)
+);
+
+
+
+// Fonts
+// ===========================================================
+$Vestula: 'Vestula'; 
+$VestulaBold: 'VestulaSemibold';
+$Georgia: 'Georgia';
+$Verdana: 'Verdana';
+$Crimson: 'Crimson Text', serif;
+
+
+// Mixin variables 
+// =========================================================== 
+$defined-boxsizing-type: border-box !default;
+
+
+
+// Placeholders 
+// =========================================================== 
+%clearfix {
+	@include clearfix;
+}
+%remove-margin-top {
+	margin-top: 0;
+}
+%single-transition {
+	@include single-transition(all, .3s, ease, 0s);
+}

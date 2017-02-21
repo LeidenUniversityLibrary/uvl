@@ -1,0 +1,95 @@
+
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+    font-family: $Georgia;
+    color: $textcolor;
+    /* Modernizr fallback for when there is no fontface support */
+    .no-fontface & {
+    	font-family: "Georgia";
+    }
+}
+
+a {
+	color: $linkcolor1;
+	text-decoration: none;
+	
+	&.dc-more {
+		@include fa-before('\f0da');
+	}
+}	
+
+
+input, textarea, select {
+	font-size: 1em;
+	font-weight: normal;
+	color: $textcolor;
+}
+
+table {
+	width: 100%;
+}
+
+td, th {
+	text-align: left;
+	vertical-align: top;
+	font-weight: normal;
+}
+
+	th[scope=colgroup] {
+		font-weight: bold;
+		background-color: #e6e6e6;
+	}
+	
+img {
+	max-width: 100%;
+}	
+
+p {
+	@include rhythm-margins( 0.5 );
+}
+
+h1, h2 {
+	@include type-scale(xxlarge);
+	@include rhythm-margins( 0.5 );
+	font-family: $VestulaBold;
+	font-weight: normal;
+	
+	&::first-child {
+		@include rhythm-margins( 0, 0.5 );
+	}
+}
+
+h2.dc-header-sub {
+	@include type-scale(xlarge);
+	@include rhythm-margins( 0.5, 0 );
+	font-family: $VestulaBold;
+	font-weight: normal;
+	color: #777;
+}
+
+h3 {
+	@include type-scale(large);
+	@include rhythm-margins( 1, 0 );
+	font-family: $VestulaBold;
+	font-weight: normal;
+	color: $color_blue1;
+}
+h4 {
+	@include type-scale(medium);
+	@include rhythm-margins( 1, 0 );
+	font-family: $VestulaBold;
+	font-weight: normal;
+}
+h5 {
+	@include type-scale(base);
+	@include rhythm-margins( 1, 0 );
+	font-family: $VestulaBold;
+	font-weight: bold;
+}
+h6 {
+	@include type-scale(small);
+	@include rhythm-margins( 1, 0 );
+	font-family: $VestulaBold;
+	font-weight: bold;
+}
+

@@ -1,0 +1,183 @@
+
+// flexbox grids (thumbnails, title, link) 
+
+
+// base grid --------------------------------------------------
+.dc-grid {
+	
+	@include display-flex;
+	@include flex-direction(row);
+	@include flex-wrap(wrap);
+	margin: 0 -10px;
+	list-style-type: none;
+	padding: 0;
+	
+	.dc-grid-item {
+		@include flex(1 1 auto);
+		float: none;
+		height: auto;
+		min-width: 200px;
+		width: 30%;
+		margin: 0;
+		margin: 10px;
+	}
+	
+	.dc-grid-more {
+	
+		@include flex(0 0 150px);
+		
+		.dc-grid-pic {
+			text-align: center;
+			font-family: $Vestula;
+			@include type-scale(medium);
+			color: white;
+			background-color: #999;
+		}	
+		
+		span {
+			@include vertical-align();
+		}
+	}
+		
+	h4 {
+		@include rhythm-margins( 0 );
+		color: #333;
+	}
+	
+	a {
+		display: block;
+		overflow: hidden;
+		color: $textcolor;
+	}
+	
+	.dc-grid-pic {
+		height: 160px;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.dc-grid-caption {
+		height: auto;
+		padding: 10px 1px;
+		position: static;
+	}
+}
+
+
+// variant: search results --------------------------------------------------
+.dc-grid-searchresults {
+
+	.dc-grid-item {	
+		@include flex(1 0 150px);
+		min-width: 150px;
+		width: 20%;
+		margin: 0 10px;
+	}	
+	
+	.dc-grid-pic {
+		height: 150px;
+	}
+	
+	.dc-grid-caption {
+		padding: 0;
+	}
+	
+	h4 {
+		@include type-scale(base);
+		@include rhythm-margins(.5);
+		overflow: hidden;
+		white-space: normal;
+		text-overflow: ellipsis;
+		font-family: $VestulaBold;
+		font-weight: normal;
+	}
+	
+}	
+
+
+
+	
+// variant: collection group --------------------------------------------------
+.dc-grid-collectiongroups {
+
+	.dc-grid-item {	
+		min-width: 100px;
+		width: 12%;
+	}	
+	
+	.dc-grid-pic {
+		height: 100px;
+	}
+	
+	.dc-grid-caption {
+		padding: 0;
+	}
+	
+	h4 {
+		@include type-scale(base);
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		font-family: $VestulaBold;
+		font-weight: normal;
+	}
+	
+}	
+
+
+// variant: compound items --------------------------------------------------
+.dc-grid-compound {
+	
+	@include flex-wrap(nowrap);
+	overflow-x: scroll;
+	margin: 0;
+	@include rhythm-margins( 0, 1 );
+	@include rhythm-padding( 1, .5 );
+
+	.dc-grid-item {	
+		@include flex(0 0 auto);
+		min-width: 100px;
+		width: 15%;
+		margin: 0 4px;
+	}	
+	
+	.dc-grid-pic {
+		height: 120px;
+	}
+	
+	h4 {
+		// @include rhythm-margins(.5,0);
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		margin-top: 2px;
+		@include type-scale(base);
+		font-weight: normal;
+		padding-left: 5px;
+		padding-right: 5px; 
+	}
+}	
+
+
+// variant: related items --------------------------------------------------
+.dc-grid-related {
+
+	@include justify-content(right);
+	
+	.dc-grid-item {	
+		@include flex(1 0 auto);
+		min-width: 80px;
+		max-width: 160px;
+		width: 10%;
+	}	
+	
+	.dc-grid-pic {
+		height: 80px;
+	}
+}	
+
+

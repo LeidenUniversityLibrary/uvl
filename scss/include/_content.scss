@@ -1,0 +1,291 @@
+
+/* indent
+.dc-content h2 ~ * {
+    margin-left: 50px;
+}*/
+
+.dc-content .dc-leader {
+	font-family: $Vestula;
+	@include type-scale(medium);
+}
+
+.dc-section-header, .dc-sidebox-header {
+	position: relative;
+	@include type-scale(medium);
+	@include rhythm-padding( .2 );
+	padding-left: 1em;
+	color: #fff;
+	background: $color_blue1;
+    margin-bottom: 1em;
+	
+	// small arrow left bottom
+	@include arrowheader;
+}
+
+
+.dc-inline-links {
+	border-top: solid 1px #ccc;
+	@include rhythm-padding(.5);
+	
+	* + a {
+		margin-left: .5em;
+	} 
+}
+
+// searchresults --------------------------------------------------------------
+.dc-searchresults-pager {
+	
+	@extend %clearfix;
+	margin: 0;
+	@include rhythm-margins( .25 );
+	text-align: center;
+	
+	@include mappy-bp(medium) {
+		text-align: right;
+	}
+	
+	li {
+		display: inline-block;
+		padding: 0 2px;
+	}
+	
+	.dc-pager-active {
+		background: #ccc;
+		padding: 0 6px;
+		
+		a {	color: white; }
+	}
+	
+	.dc-pager-first a {
+		@include fa-before('\f100', 1em, .3em, middle);
+	}
+	.dc-pager-prev a {
+		@include fa-before('\f137', 1em, .3em, middle);
+	}
+	.dc-pager-next a {
+		@include fa-before('\f138', 1em, .3em, middle);
+	}
+	.dc-pager-last a {
+		@include fa-before('\f101', 1em, .3em, middle);
+	}
+
+	span {
+		display: inline-block;
+		@include hide-text();
+		float: left;
+	}
+	
+	
+}
+
+.dc-searchresults-tools {
+	
+	@extend %clearfix;
+	background-color: #eee;
+	list-style-type: none;
+	text-align: right;
+	@include type-scale(medium);
+	
+	li {
+		display: inline-block;
+		border-left: solid 1px #fff;
+		
+		span {
+			display: none;
+		}
+	}
+	
+	a {
+		display: block;
+		@include rhythm-padding( .25 );
+		padding-left: 10px;
+		padding-right: 10px;
+		color: #666;
+		
+		&:hover {
+			color: #333;
+		}
+	}	
+	
+	.dc-searchresults-btn-grid {
+		@include fa-after('\f00a');
+	}
+
+	.dc-searchresults-btn-list {
+		@include fa-after('\f03a');
+	}
+
+	.dc-searchresults-btn-save {
+		@include fa-after('\f0c7');
+	}
+	
+}
+
+.dc-results {
+	
+	border-collapse: collapse;
+	
+	td {
+		display: block;
+		border-bottom: solid 1px #ccc;
+		text-align: left;
+		vertical-align: top;
+		@include rhythm-padding( 1 );
+		
+		@include mappy-bp(medium) {
+			display: table-cell;
+			border-bottom: solid 1px #ccc;
+			padding: 2em;
+		}
+		
+	}
+	
+	td:first-child {
+	
+		border: none;
+		@include rhythm-padding( 1, 0 );
+		
+		a { // thumb wrapper
+			display: block; 
+			height: 150px; 
+			width: 150px;
+		}
+		
+		@include mappy-bp(medium) {
+			@include rhythm-padding( 1 );
+			width: 150px;
+			padding-left: 0;
+			padding-right: 0;
+			border-bottom: solid 1px #ccc;
+		}
+		
+	}
+	
+	h3 {
+		@include type-scale(medium);
+		margin-top: 0;
+	}
+	
+	dt {
+		font-family: $VestulaBold;
+		color: #222;
+	}
+	
+	dd {
+		padding: 0;
+		margin: 0;
+		@include rhythm-margins( 0, .5 );
+	}
+	
+}
+
+.dc-filters {
+	
+	@extend %clearfix;
+	
+	h4 {
+		border-top: 1px solid #ccc;
+		@include type-scale(medium);
+		@include rhythm-padding( .25 );
+		@include rhythm-margins( .5, 0 );
+	}	
+	
+	select {
+		width: 100%;
+	}
+}
+
+.dc-filter-anew a {
+	@include fa-before('\f0e2');
+	margin-right: 3px;
+}
+
+.dc-facet-list {
+	
+	label {
+		display: block;
+	}
+	
+}
+
+
+// collection / detail --------------------------------------------------------------
+.dc-metadata {
+	
+	padding: 20px;
+	@include rhythm-padding(1);
+	background: $color_gray6;
+	
+	table {
+		border-collapse: collapse;
+	}
+	
+	caption {
+		display:none;
+	}
+	
+	h3 {
+		@include rhythm-margins(0, .5);
+	}
+	
+	th {
+		font-family: $VestulaBold;
+		padding-right: 2em;
+		white-space: nowrap;
+	}
+}
+
+.dc-viewer {
+	@include rhythm-margins( 1 );
+	
+	.dc-viewer-header {
+		display: none;
+	}
+}
+
+.dc-related-searches {
+	a {
+		@include fa-after('\f002',.8em) { color: #999; };
+	}
+}
+
+.dc-detail-tools {
+	
+	padding: 0;
+	font-family: $Vestula;
+	@extend %clearfix;
+	list-style-type: none;
+	@include type-scale(medium);
+	@include rhythm-margins( 0, 1 );
+	
+	li {
+		display: inline-block;
+		color: #fff;
+		background-color: $color_blue3;
+		@include border-radius(3px);
+		padding: 0;
+		
+		&:hover {
+			background-color: darken( $color_blue3, 10% );
+		}
+		
+		span {
+			display: none;
+			margin-right: 5px;
+		}
+	}
+	
+	a {
+		display: block;
+		@include rhythm-padding( .25 );
+		padding-left: 10px;
+		padding-right: 10px;
+		color: #fff;
+	}	
+	
+}
+
+
+
+
+

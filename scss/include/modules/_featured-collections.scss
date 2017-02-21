@@ -1,0 +1,232 @@
+
+// feature sections for home and collections 
+
+.dc-feature {
+	padding-top: 15px;
+	
+	.dc-content & {
+		padding-top: 0;
+		@include rhythm-margins(0,1);
+	}
+}	
+
+
+.dc-feature-bg {
+	
+	@include mappy-bp(large) {
+	
+		background-color: #e3e3e3;
+		height: 560px;
+		
+		& + .dc-centercontent {
+			margin-top: -560px;
+		}    	
+		
+		& ~* .dc-sidebar {
+			margin-top: 40px;
+		}
+	}
+}	
+
+.dc-feat-banner {
+	width: 100%; 
+	overflow: hidden; 
+	//background-color: $color_gray4;
+	
+	@include mappy-bp(large) {
+		height: 350px; 
+	}
+	
+	.dc-centercontent {
+		height: 100%;
+	}	
+	
+	.dc-content {
+		height: 100%;
+		padding-bottom: 0;
+		@include padding-leader(1);
+	}
+	
+	.dc-feat-primary {
+		position: relative;
+		height: 100%;
+	}
+	
+	.dc-feat-desc {
+		padding-left: 1em;
+		padding-right: 1em;
+		@include rhythm-padding(.5);
+		
+		h2 {
+			color: #222;
+			font-family: $Vestula;
+			@include rhythm-margins(0.5, 0);
+			@include type-scale(xlarge);
+			
+			@include mappy-bp(large) {
+				color: #eee;
+			}
+		}
+		
+		@include mappy-bp(large) {
+			background: #666;
+			color: #ddd;
+			float: left;
+			width: 35%;
+			height: 100%;
+			border-right: 5px solid #e3e3e3;
+			padding: 2em;
+			
+			& + .dc-feat-pic {
+				float: right;
+				width: 65%;
+			}
+		}
+	}
+	
+	
+	.dc-feat-pic {
+		
+		position: relative;
+		height: 300px;
+		
+		@include mappy-bp(large) {
+			height: 100%;
+		}
+		
+		h4 { //caption
+			background-color: rgba(0,0,0,0.5);
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			padding: 1em 2em;
+			color: white;
+			font-family: $Vestula;
+		}
+	}
+	
+	.dc-feat-header {
+		position: absolute; 
+		padding: 20px; 
+		@include background-image(linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6)));
+		left: 0; 
+		right: 0;
+		bottom: 0;
+		
+		h2 {
+			color: #eee; 
+			font-weight: normal; 
+			@include type-scale(medium);
+			@include rhythm-margins( 0 );
+			font-family: $Vestula;
+			text-transform: lowercase;
+		}
+		
+		h3 {
+			color: rgb(255, 255, 255); 
+			@include type-scale(xlarge);
+			font-weight: normal;
+			font-family: $Vestula;
+			@include rhythm-margins( 0 );
+		}
+	}
+}
+
+.dc-feat-browser {
+	
+	@extend %clearfix;
+
+	height: 150px;
+	font-family: $Vestula;
+	
+	#themain & .dc-content { 
+		margin-top: 0;
+		padding-top: 0;
+	}
+	
+	ul {
+		@include display-flex;
+		@include flex-direction(row);
+		@include flex-wrap(wrap);
+		height: 150px;
+		margin: 0;
+		padding: 5px 0 0;
+		white-space: nowrap;
+	}
+	
+	li {
+		@include flex(1 1 auto);
+		list-style: none;
+		height: 100%;
+		width: 180px;
+		position: relative;
+		margin: 0 5px 15px 0; // just enough to push wrapping li's out of sight
+		overflow: hidden;
+		
+		h3 {
+			font-family: $Vestula;
+			@include type-scale(base);
+			margin: 0;
+			background-color: rgba(0, 0, 0, 0.35);
+			bottom: 0;
+			color: white;
+			font-weight: normal;
+			left: 0;
+			padding: 10px;
+			position: absolute;
+			// text-transform: uppercase;
+			width: 100%;	
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;	
+		}
+		
+		a {
+			display: block;
+			height: 100%;
+		
+			img {
+				display: block; 
+				max-width: none; 
+				width: 100%; 
+			}
+		}	
+		
+	}
+
+	.dc-feat-more {
+	
+		@extend %clearfix;
+	
+		width: 220px;
+		background: #999 none repeat scroll 0 0;
+		color: white;
+		display: block;
+		float: right;
+		height: 145px;
+		padding: 0 1.5em;
+		margin: 5px 0 15px 0;	// just enough to push wrapping li's out of sight	
+		
+		a {
+			display: block;
+			height: 100%;
+			color:white;
+			white-space: nowrap;
+		}
+
+		.fa {
+			margin-right: 5px;
+		}	
+		
+		span {
+			@include vertical-align();
+			@include type-scale(medium);
+			text-align: center;
+		}
+
+	}
+	
+}
+
+

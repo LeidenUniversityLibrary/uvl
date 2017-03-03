@@ -8,8 +8,37 @@
 		padding-top: 0;
 		@include rhythm-margins(0,1);
 	}
-}	
+}
+.view-nodequeue-1{
+	.dc-grid-item{
+		position: relative;
 
+	}
+	.dc-grid-caption{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		color: rgb(255, 255, 255);
+		background-color: rgba(0, 0, 0, 0.35);
+		width: 100%;
+		h4 {
+			padding: 10px;
+			width: 100%;
+			@include type-scale(xlarge);
+			font-weight: normal;
+			font-family: $Vestula;
+			@include rhythm-margins( 0 );
+			font-size: 1em;
+			left: 0;
+			line-height: 1.625em;
+			margin: 0;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+
+		}
+	}
+}
 
 .dc-feature-bg {
 	

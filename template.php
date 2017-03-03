@@ -114,3 +114,10 @@ function uvl_preprocess_node(&$vars) {
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_theme().
+ */
+function uvl_preprocess_islandora_object(&$variables) {
+  $islandora_object = $variables['islandora_object'];
+}

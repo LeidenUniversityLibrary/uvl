@@ -27,7 +27,9 @@ jQuery(document).ready( function($) {
 
 	//Islandora object detail page: URL popup
 	$("#link-button").click(function(){
-		alert(window.location.href);
+		var url = jQuery(this).attr('href');
+		prompt('Copy / paste the URL below',url);
+		e.preventDefault();
 	});
 
 	var button = $(".pager-last > a");
@@ -42,7 +44,6 @@ jQuery(document).ready( function($) {
 	button.html("<span>List</span>");
 	var button = $(".dc-searchresults-tools a.display-grid");
 	button.html("<span>Grid</span>");
-
 });
 
 

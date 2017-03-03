@@ -1246,11 +1246,6 @@ li.dc-compound-items {
   width: 10% !important;
 }
 
-.page-islandora-object-collectionla-galigo #block-views-collection-info-block-3 {
-  padding-bottom: 125px;
-  background: url(../img/sponsor-galigo.png) no-repeat center bottom;
-}
-
 .solr-fields dt, .solr-fields dd {
   border-top: none !important;
 }

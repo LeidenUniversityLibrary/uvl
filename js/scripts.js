@@ -26,7 +26,7 @@ jQuery(document).ready( function($) {
 	cbpHorizontalMenu.init();
 
 	//Islandora object detail page: URL popup
-	$("#link-button").click(function(){
+	$("#link-button").click(function(e){
 		var url = jQuery(this).attr('href');
 		prompt('Copy / paste the URL below',url);
 		e.preventDefault();

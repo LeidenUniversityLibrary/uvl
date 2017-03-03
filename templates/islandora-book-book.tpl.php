@@ -19,15 +19,7 @@ print render($block['content']);
 
 <div class="dc-sidebox dc-sidebox-right">
   <ul class="dc-detail-tools">
-
-    <li>
-      <a href="#" title="download">
-        <span>download</span>
-        <i class="fa fa-download" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li><a href="#" title="print"><span>print</span><i class="fa fa-print" aria-hidden="true"></i></a></li>
-    <li><a id="link-button" href="#" title="link"><span>link</span><i class="fa fa-link" aria-hidden="true"></i></a></li>
+    <li><a id="link-button" href="<?php print $persistent_url; ?>" title="link"><span>link</span><i class="fa fa-link" aria-hidden="true"></i></a></li>
   </ul>
   <?php if ($parent_collections): ?>
     <div>

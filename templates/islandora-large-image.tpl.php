@@ -49,7 +49,7 @@
         <li><a href="<?php print(variable_get(islandora_base_url)); ?>/objects/<?php print $islandora_dublin_core->dc['dc:identifier'][0]; ?>/datastreams/OBJ/content" title="download"><span>download</span><i class="fa fa-download" aria-hidden="true"></i></a></li>
         <li><a href="#?????????????????" title="print"><span>print</span><i class="fa fa-print" aria-hidden="true"></i></a></li>-->
 
-        <li><a id="link-button" href="#" title="link"><span>link</span><i class="fa fa-link" aria-hidden="true"></i></a></li>
+        <li><a id="link-button" href="<?php print $persistent_url; ?>" title="link"><span>link</span><i class="fa fa-link" aria-hidden="true"></i></a></li>
       </ul>
       <?php if ($parent_collections): ?>
       <div>
@@ -66,12 +66,5 @@
     <div class="dc-box">
       <?php print $metadata; ?>
     </div>
-    <section class="dc-related-items">
-      <h3 class="dc-section-header"><?php print t("Related items") ?></h3>
-      <?php
-        $block = module_invoke('views', 'block_view', 'c9aff44ea5cef77286d2b1558b49bfd0');
-        print render($block);
-      ?>
-    </section>
   </div>
 

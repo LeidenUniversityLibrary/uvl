@@ -118,6 +118,37 @@ function uvl_preprocess_node(&$vars) {
 /**
  * Implements hook_preprocess_theme().
  */
-function uvl_preprocess_islandora_object(&$variables) {
-  $islandora_object = $variables['islandora_object'];
+function uvl_preprocess(&$variables, $hook) {
+
+  // Adding persisten url to islandor objects
+  if(isset($variables['islandora_object'])){
+    $object = $variables['islandora_object'];
+    $url = '';
+    if (module_exists("islandora_handle")) {
+      if (isset($object['MODS'])) {
+        $xpath = "/mods:mods/mods:identifier[@type='hdl']";
+        $content = $object['MODS']->content;
+        $domdoc = new DOMDocument();
+        if ($domdoc->loadXML($content)) {
+          $domxpath = new DOMXPath($domdoc);
+          $domxpath->registerNamespace('mods', 'http://www.loc.gov/mods/v3');
+          $domnodelist = $domxpath->query($xpath);
+          if ($domnodelist->length > 0) {
+            foreach ($domnodelist as $domnode) {
+              $text = $domnode->textContent;
+              if (isset($text) && strlen($text) > 0) {
+                $url = $text;
+                break;
+              }
+            }
+          }
+        }
+      }
+    }
+    if (strlen($url) == 0) {
+      $url = url("islandora/object/" . $object->id, array('absolute' => TRUE));
+    }
+    $variables['persistent_url'] = $url;
+  }
+
 }

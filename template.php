@@ -91,3 +91,26 @@ function render_block_content($module, $delta) {
   }
   return $output;
 }
+
+/**
+ * Override or insert variables into the node template.
+ *
+ * @param $vars
+ *   An array of variables to pass to the theme template.
+ */
+function uvl_preprocess_node(&$vars) {
+  // Get the node.
+  $node = $vars['node'];
+
+  if ($vars['view_mode'] == 'teaser') {
+    // Adding hook suggestions
+    switch ($node->type) {
+      case 'more_item':
+        $vars['theme_hook_suggestions'][] = 'node__more__teaser';
+      break;
+      case 'home_page_item':
+        $vars['theme_hook_suggestions'][] = 'node__home_page_item__teaser';
+        break;
+    }
+  }
+}

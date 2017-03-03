@@ -1536,6 +1536,35 @@ div#BRpage {
   margin-bottom: 1.625em;
 }
 
+.view-nodequeue-1 .dc-grid-item {
+  position: relative;
+}
+.view-nodequeue-1 .dc-grid-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.35);
+  width: 100%;
+}
+.view-nodequeue-1 .dc-grid-caption h4 {
+  padding: 10px;
+  width: 100%;
+  font-size: 2.197em;
+  line-height: 1.47929em;
+  font-weight: normal;
+  font-family: "Vestula";
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-size: 1em;
+  left: 0;
+  line-height: 1.625em;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 @media all and (min-width: 63.75em) {
   .dc-feature-bg {
     background-color: #e3e3e3;
@@ -1798,6 +1827,7 @@ div#BRpage {
 }
 .dc-grid .dc-grid-pic {
   height: 160px;
+  overflow: hidden;
 }
 .dc-grid .dc-grid-pic img {
   width: 100%;
@@ -1841,9 +1871,13 @@ div#BRpage {
 }
 .dc-grid-collectiongroups .dc-grid-pic {
   height: 100px;
+  overflow: hidden;
 }
 .dc-grid-collectiongroups .dc-grid-caption {
   padding: 0;
+}
+.dc-grid-collectiongroups .dc-grid-caption p {
+  margin: 0 0 0 0;
 }
 .dc-grid-collectiongroups h4 {
   font-size: 1em;

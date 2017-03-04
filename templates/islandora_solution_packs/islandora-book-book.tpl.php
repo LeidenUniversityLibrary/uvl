@@ -16,9 +16,12 @@
 $block = module_invoke('islandora_compound_object', 'block_view', 'compound_navigation');
 print render($block['content']);
 ?>
-
 <div class="dc-sidebox dc-sidebox-right">
   <ul class="dc-detail-tools">
+    <!--
+        <li><a href="<?php print(variable_get(islandora_base_url)); ?>/objects/<?php print $islandora_dublin_core->dc['dc:identifier'][0]; ?>/datastreams/OBJ/content" title="download"><span>download</span><i class="fa fa-download" aria-hidden="true"></i></a></li>
+        <li><a href="#?????????????????" title="print"><span>print</span><i class="fa fa-print" aria-hidden="true"></i></a></li>
+        -->
     <li><a id="link-button" href="<?php print $persistent_url; ?>" title="link"><span>link</span><i class="fa fa-link" aria-hidden="true"></i></a></li>
   </ul>
   <?php if ($parent_collections): ?>

@@ -32,6 +32,14 @@ jQuery(document).ready( function($) {
 		e.preventDefault();
 	});
 
+	$('.dc-searchresults-btn-save').click(function(e){
+		console.log('In click');
+		var url = window.location.href;
+		prompt('Copy / paste the URL below',url);
+		e.preventDefault();
+	});
+	
+
 	var button = $(".pager-last > a");
 	button.html("<span>last</span>");
 	var button = $(".pager-first > a");

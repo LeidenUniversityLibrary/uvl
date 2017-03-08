@@ -261,3 +261,32 @@ function uvl_pager($variables) {
     ));
   }
 }
+function uvl_preprocess_item_list(&$vars) {
+
+  // make sure we're dealing with a pager item list
+  if (isset($vars['attributes']['class']) && in_array('pager', $vars['attributes']['class'])) {
+    // Add an extra class to item list
+    $vars['attributes']['class'][] = 'dc-searchresults-pager';
+
+    // loop the items and find the first .pager-item
+    foreach ($vars['items'] as $index => $item) {
+
+      // adding classes to first previous next last and active iten
+      if(in_array('pager-first', $item['class'] )){
+        $vars['items'][$index]['class'][] = 'dc-pager-first';
+      }
+      if(in_array('pager-previous', $item['class'] )){
+        $vars['items'][$index]['class'][] = 'dc-pager-prev';
+      }
+      if(in_array('pager-current', $item['class'] )){
+        $vars['items'][$index]['class'][] = 'dc-pager-active';
+      }
+      if(in_array('pager-next', $item['class'] )){
+        $vars['items'][$index]['class'][] = 'dc-pager-next';
+      }
+      if(in_array('pager-last', $item['class'] )){
+        $vars['items'][$index]['class'][] = 'dc-pager-last';
+      }
+    }
+  }
+}

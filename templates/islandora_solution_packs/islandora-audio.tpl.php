@@ -17,6 +17,11 @@
     <?php endif; ?>
   </div>
   <div class="islandora-audio-metadata">
+    <?php
+    //Render the compound navigation block
+    $block = module_invoke('islandora_compound_object', 'block_view', 'compound_navigation');
+    print render($block['content']);
+    ?>
     <?php print $description; ?>
     <div class="dc-sidebox dc-sidebox-right">
       <ul class="dc-detail-tools">

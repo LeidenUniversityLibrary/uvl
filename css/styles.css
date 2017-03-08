@@ -1308,6 +1308,10 @@ div#BRpage {
   vertical-align: middle;
 }
 
+.form-item-islandora-simple-search-query label {
+  display: none;
+}
+
 /* import isnlandora
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .islandora-inline-metadata dt {

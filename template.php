@@ -121,8 +121,16 @@ function uvl_preprocess_node(&$vars) {
 function uvl_preprocess(&$variables, $hook) {
 
   // Adding persisten url to islandor objects
-  if(isset($variables['islandora_object'])){
+  if(isset($variables['object'])) {
+    $object = $variables['object'];
+  }
+  elseif (isset($variables['islandora_object'])){
     $object = $variables['islandora_object'];
+  }
+  else{
+    $object = FALSE;
+  }
+  if($object){
     $url = '';
     if (module_exists("islandora_handle")) {
       if (isset($object['MODS'])) {

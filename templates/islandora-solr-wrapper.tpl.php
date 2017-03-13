@@ -37,11 +37,11 @@ if(!is_array($parameters)){
 //Build a new array per list type so we can add query parameters
 $parameters_list = array();
 $parameters_list = $parameters;
-$parameters_list['display'] = 'tud_default';
+$parameters_list['display'] = 'default';
 
 $parameters_grid = array();
 $parameters_grid = $parameters;
-$parameters_grid['display'] = 'tud_grid';
+$parameters_grid['display'] = 'grid';
 
 //Get statest based on query parameter
 if(is_array($parameters) && isset($parameters['display'])){
@@ -70,12 +70,6 @@ $grid_view = url($path, array('query'=> $parameters_grid));
     <li><a class="dc-searchresults-btn-list" title="show list" href="<?php print $list_view; ?>"><span>show list</span></a></li>
     <li><a class="dc-searchresults-btn-save" title="save search" href="#"><span>save search</span></a></li>
   </ul>
-  <div id="test">
-  <?php
-    $block = module_invoke('islandora_solr', 'block_view', 'display_switch');
-    print render($block['content']);
-  ?>
-  </div>
   <?php print $results; ?>
   <?php print $solr_debug; ?>
   <?php print $solr_pager; ?>

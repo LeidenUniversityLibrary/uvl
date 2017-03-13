@@ -85,7 +85,7 @@ if(!empty($field_link[0]['url'])){
   $link = $field_link[0]['url'];
 }
 ?>
-<a href="<?php $link ?>">
+<a href="<?php print $link ?>">
   <div class="dc-grid-pic">
     <?php print render($content['field_home_image']); ?>
   </div>

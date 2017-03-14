@@ -59,8 +59,20 @@
 
 .dc-feat-banner {
 	width: 100%; 
-	overflow: hidden; 
+	overflow: hidden;
+	position: relative;
 	//background-color: $color_gray4;
+	h2{
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.35);
+		color: white;
+		padding: 10px;
+		a{
+			color: white;
+		}
+	}
 	
 	@include mappy-bp(large) {
 		height: 350px; 

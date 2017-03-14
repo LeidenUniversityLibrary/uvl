@@ -1584,6 +1584,18 @@ div#BRpage {
 .dc-feat-banner {
   width: 100%;
   overflow: hidden;
+  position: relative;
+}
+.dc-feat-banner h2 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.35);
+  color: white;
+  padding: 10px;
+}
+.dc-feat-banner h2 a {
+  color: white;
 }
 @media all and (min-width: 63.75em) {
   .dc-feat-banner {

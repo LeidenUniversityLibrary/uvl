@@ -1147,6 +1147,10 @@ footer .block p {
   margin: 0;
 }
 
+h2.title {
+  margin-bottom: 0;
+}
+
 #block-menu-menu-footer-menu {
   margin-top: 1.625em;
   margin-bottom: 1.652em;
@@ -1156,10 +1160,10 @@ footer .block p {
   padding-right: 0;
 }
 #block-menu-menu-footer-menu li:not(.last):after {
-  content: ' |';
+  content: ' | ';
 }
-#block-menu-menu-footer-menu li.last:after {
-  content: none;
+#block-menu-menu-footer-menu li:last-child:after {
+  content: "";
 }
 #block-menu-menu-footer-menu .menu {
   text-align: inherit;

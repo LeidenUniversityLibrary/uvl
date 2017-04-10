@@ -21,13 +21,6 @@
  * @see theme_islandora_large_image()
  */
 ?>
-<?php if ($dc_array['dc:subject']['value']): ?>
-  <p class="dc-leader"><?php print $dc_array['dc:subject']['value']; ?></p>
-<?php endif; ?>
-<?php if ($dc_array['dc:description']['value']): ?>
-  <?php print $dc_array['dc:description']['value']; ?>
-<?php endif; ?>
-
 <section class="dc-viewer">
   <div class="islandora-large-image-object islandora" vocab="http://schema.org/" prefix="dcterms: http://purl.org/dc/terms/" typeof="ImageObject">
     <div class="islandora-large-image-content-wrapper clearfix">

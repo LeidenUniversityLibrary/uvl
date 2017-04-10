@@ -166,6 +166,7 @@ function uvl_preprocess(&$variables, $hook) {
       $url = url("islandora/object/" . $object->id, array('absolute' => TRUE));
     }
     $variables['persistent_url'] = $url;
+    $variables['theme_hook_suggestions'][] = 'newbies';
   }
 }
 

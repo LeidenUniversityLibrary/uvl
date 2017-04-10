@@ -1003,7 +1003,7 @@ body {
 }
 .dc-results td:first-child a {
   display: block;
-  height: 150px;
+  min-height: 150px;
   width: 150px;
 }
 @media all and (min-width: 48em) {
@@ -1330,6 +1330,18 @@ div#BRpage {
 
 .block-islandora-compound-parent-metadata-block {
   width: 70%;
+}
+
+.islandora-basic-image-content {
+  margin-bottom: 20px;
+}
+
+.islandora-internet-archive-bookreader {
+  margin-bottom: 20px;
+}
+
+div#BookReader {
+  margin-bottom: 20px;
 }
 
 /* import modules 

@@ -116,6 +116,15 @@ function uvl_preprocess_node(&$vars) {
 }
 
 /**
+ * Implements hook_preprocess_page().
+ */
+function uvl_preprocess_page(&$vars, $hook) {
+  // Unsets the ugly drupal message.
+  unset($vars['page']['content']['system_main']['default_message']);
+}
+
+
+/**
  * Implements hook_preprocess_theme().
  */
 function uvl_preprocess(&$variables, $hook) {
@@ -300,7 +309,7 @@ function uvl_preprocess_item_list(&$vars) {
 }
 
 function uvl_preprocess_islandora_objects_subset(&$variables){
-  
+
   // Only act on a collection page
   if (strpos(arg(2), 'collection:') !== false) {
     $pid = arg(2);

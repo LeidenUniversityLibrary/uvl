@@ -1288,11 +1288,6 @@ div#BRpage {
   font-weight: normal;
 }
 
-.pager-ellipsis,
-#islandora-solr-result-count {
-  display: none;
-}
-
 .dc-searchresults-tools li {
   margin: 0 !important;
 }

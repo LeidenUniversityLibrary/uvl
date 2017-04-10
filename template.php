@@ -120,7 +120,7 @@ function uvl_preprocess_node(&$vars) {
  */
 function uvl_preprocess(&$variables, $hook) {
 
-  // Adding persisten url to islandor objects
+  // Adding persistent url to islandora objects
   if(isset($variables['object'])) {
     $object = $variables['object'];
   }
@@ -297,4 +297,29 @@ function uvl_preprocess_item_list(&$vars) {
       }
     }
   }
+}
+
+function uvl_preprocess_islandora_objects_subset(&$variables){
+  
+  // Only act on a collection page
+  if (strpos(arg(2), 'collection:') !== false) {
+    $pid = arg(2);
+    // Check query if a content type is filled for this pid
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'collection')
+      ->propertyCondition('status', NODE_PUBLISHED)
+      ->fieldCondition('field_pid', 'value', $pid, '=')
+      ->range(0, 1);
+    $result = $query->execute();
+
+    // Check if there is a node
+    if (isset($result['node'])) {
+      // If we have a node disable this display.
+      unset($variables['content']);
+      unset($variables['pager']);
+      unset($variables['display_links']);
+    }
+  }
+
 }

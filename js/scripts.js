@@ -19,8 +19,6 @@ jQuery(document).ready( function($) {
 		parent.css( 'background-image', 'url("' + $(this).attr('src') + '")' );
 		parent.css( 'background-size', 'cover' );
 		parent.css( 'background-position', 'center' );
-		parent.css( 'width', '100%' );
-		parent.css( 'height', '100%' );
 		$(this).hide();
 	});
 

@@ -24,13 +24,20 @@
     ?>
     <?php print $description; ?>
     <div class="dc-sidebox dc-sidebox-right">
-      <ul class="dc-detail-tools">
-        <!--
-        <li><a href="<?php print(variable_get(islandora_base_url)); ?>/objects/<?php print $islandora_dublin_core->dc['dc:identifier'][0]; ?>/datastreams/OBJ/content" title="download"><span>download</span><i class="fa fa-download" aria-hidden="true"></i></a></li>
-        <li><a href="#?????????????????" title="print"><span>print</span><i class="fa fa-print" aria-hidden="true"></i></a></li>-->
+      <?php
 
-        <li><a id="link-button" href="<?php print $persistent_url; ?>" title="link"><span>link</span><i class="fa fa-link" aria-hidden="true"></i></a></li>
-      </ul>
+      // Render the detail tools block
+      $block = module_invoke_all('detail_tools_block_view');
+
+      $block['list']['#type'] = 'ul';
+      $block['list']['#theme'] = 'item_list';
+
+      if (isset($block['list']['#attributes']['class'])) {
+        $block['list']['#attributes']['class'] = array_unique($block['list']['#attributes']['class']);
+      }
+
+      print render($block);
+      ?>
       <?php if ($parent_collections): ?>
         <div>
           <h3 class="dc-sidebox-header"><?php print t('In collections'); ?></h3>

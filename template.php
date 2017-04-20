@@ -123,54 +123,6 @@ function uvl_preprocess_page(&$vars, $hook) {
   unset($vars['page']['content']['system_main']['default_message']);
 }
 
-
-/**
- * Implements hook_preprocess_theme().
- */
-function uvl_preprocess(&$variables, $hook) {
-
-  // Adding persistent url to islandora objects
-  if(isset($variables['object'])) {
-    $object = $variables['object'];
-  }
-  elseif (isset($variables['islandora_object'])){
-    $object = $variables['islandora_object'];
-  }
-  else{
-    $object = FALSE;
-  }
-  if($object){
-    $url = '';
-    if (module_exists("islandora_handle")) {
-      if (isset($object['MODS'])) {
-        $xpath = "/mods:mods/mods:identifier[@type='hdl']";
-        $content = $object['MODS']->content;
-        $domdoc = new DOMDocument();
-        if ($domdoc->loadXML($content)) {
-          $domxpath = new DOMXPath($domdoc);
-          $domxpath->registerNamespace('mods', 'http://www.loc.gov/mods/v3');
-          $domnodelist = $domxpath->query($xpath);
-          if ($domnodelist->length > 0) {
-            foreach ($domnodelist as $domnode) {
-              $text = $domnode->textContent;
-              if (isset($text) && strlen($text) > 0) {
-                $url = $text;
-                break;
-              }
-            }
-          }
-        }
-      }
-    }
-    if (strlen($url) == 0) {
-      $url = url("islandora/object/" . $object->id, array('absolute' => TRUE));
-    }
-    $variables['persistent_url'] = $url;
-    $variables['theme_hook_suggestions'][] = 'newbies';
-  }
-}
-
-
 function uvl_pager($variables) {
   $tags = $variables['tags'];
   $element = $variables['element'];

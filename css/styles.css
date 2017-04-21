@@ -1784,15 +1784,15 @@ div#BookReader {
   width: 100%;
 }
 .dc-feat-browser .dc-feat-more {
-  width: 220px;
   background: #999 none repeat scroll 0 0;
   color: white;
   display: block;
-  float: right;
   height: 145px;
 }
 #block-uvl-blocks-uvl-blocks-collection-images .dc-feat-browser .dc-feat-more {
   margin: 5px 0 15px 0;
+  float: right;
+  width: 220px;
 }
 .dc-feat-browser .dc-feat-more a {
   display: block;

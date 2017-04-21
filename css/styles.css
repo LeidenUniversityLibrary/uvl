@@ -1059,6 +1059,13 @@ body {
 .dc-facet-list label {
   display: block;
 }
+.dc-box {
+  background-color: #f5f5f5;
+}
+.dc-box H3 {
+  margin: 0;
+  padding: 1.4em 0 0 20px;
+}
 
 .dc-metadata {
   padding: 20px;
@@ -1324,7 +1331,21 @@ div#BRpage {
 }
 
 .block-islandora-compound-parent-metadata-block {
+  background-color: #f5f5f5;
   width: 70%;
+}
+
+.block-islandora-compound-parent-metadata-block H3 {
+  margin: 0;
+  padding: 1.4em 0 0 20px; 
+}
+
+.islandora-viewer + .islandora-metadata {
+  padding-top: 2.5em;
+}
+
+.islandora-metadata-fields TH {
+  width: 25%;
 }
 
 .islandora-basic-image-content {
@@ -1729,6 +1750,9 @@ div#BookReader {
   margin: 0 5px 15px 0;
   overflow: hidden;
 }
+.dc-feat-browser li.views-row-last {
+  margin: 0 0 15px 0;
+}
 .dc-feat-browser li .dc-grid-pic {
   width: 100%;
   height: 100%;
@@ -1766,7 +1790,8 @@ div#BookReader {
   display: block;
   float: right;
   height: 145px;
-  padding: 0 1.5em;
+}
+#block-uvl-blocks-uvl-blocks-collection-images .dc-feat-browser .dc-feat-more {
   margin: 5px 0 15px 0;
 }
 .dc-feat-browser .dc-feat-more a {

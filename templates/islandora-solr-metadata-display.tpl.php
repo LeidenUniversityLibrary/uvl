@@ -21,7 +21,7 @@
 <?php if ($found):
   if (!(empty($solr_fields) && variable_get('islandora_solr_metadata_omit_empty_values', FALSE))):?>
     <section <?php $print ? print('class="dc-metadata islandora islandora-metadata"') : print('class="dc-metadata islandora islandora-metadata collapsible collapsed"');?>>
-      <h3><?php print t('Metadata'); ?></h3>
+      <!-- Metadata -->
       <div class="fieldset-wrapper">
         <table class="islandora-inline-metadata islandora-metadata-fields">
           <tbody>

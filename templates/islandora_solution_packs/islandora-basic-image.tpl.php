@@ -9,7 +9,7 @@
 ?>
 
 <div class="islandora-basic-image-object islandora" vocab="http://schema.org/" prefix="dcterms: http://purl.org/dc/terms/" typeof="ImageObject">
-  <div class="islandora-basic-image-content-wrapper clearfix">
+  <div class="islandora-basic-image-content-wrapper clearfix islandora-viewer">
     <?php if (isset($islandora_content)): ?>
       <div class="islandora-basic-image-content">
         <?php print $islandora_content; ?>
@@ -17,7 +17,7 @@
     <?php endif; ?>
   </div>
   
-  <div class="islandora-basic-image-metadata">
+  <div class="islandora-basic-image-metadata islandora-metadata">
     <?php
     //Render the compound navigation block
     $block = module_invoke('islandora_compound_object', 'block_view', 'compound_navigation');
@@ -52,6 +52,7 @@
       <?php endif; ?>
     </div>
     <div class="dc-box">
+      <H3><?php print t('Metadata'); ?></H3>
       <?php print $metadata; ?>
     </div>
   </div>

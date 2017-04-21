@@ -45,9 +45,8 @@ print render($block['content']);
 </div>
 <div class="dc-box">
 <?php if($display_metadata === 1): ?>
-  <section class="dc-metadata islandora-book-metadata">
-    <?php print $description; ?>
-    <?php print $metadata; ?>
-  </section>
+  <H3><?php print t('Metadata'); ?></H3>
+  <?php print $description; ?>
+  <?php print $metadata; ?>
 </div>
 <?php endif; ?>

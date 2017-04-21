@@ -9,7 +9,7 @@
 ?>
 
 <div class="islandora-pdf-object islandora" vocab="http://schema.org/" prefix="dcterms: http://purl.org/dc/terms/" typeof="Article">
-  <div class="islandora-pdf-content-wrapper clearfix">
+  <div class="islandora-pdf-content-wrapper clearfix islandora-viewer">
     <?php if (isset($islandora_content)): ?>
       <div class="islandora-pdf-content">
         <?php print $islandora_content; ?>
@@ -19,7 +19,7 @@
       <?php print $islandora_download_link; ?>
     <?php endif; ?>
   </div>
-  <div class="islandora-pdf-metadata">
+  <div class="islandora-pdf-metadata islandora-metadata">
     <?php
     //Render the compound navigation block
     $block = module_invoke('islandora_compound_object', 'block_view', 'compound_navigation');
@@ -54,6 +54,7 @@
       <?php endif; ?>
     </div>
     <div class="dc-box">
+      <H3><?php print t('Metadata'); ?></H3>
       <?php print $metadata; ?>
     </div>
   </div>

@@ -54,7 +54,7 @@
       <?php endif; ?>
     </div>
     <div class="dc-box">
-      <H3><?php print t('Metadata'); ?></H3>
+      <H3><?php print t('Description'); ?></H3>
       <?php print $metadata; ?>
     </div>
   </div>

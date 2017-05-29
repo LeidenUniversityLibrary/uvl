@@ -285,3 +285,69 @@ function uvl_preprocess_islandora_objects_subset(&$variables){
   }
 
 }
+
+function uvl_preprocess_islandora_book_page(&$variables) {
+  // yuk, largely copied from large image
+  $islandora_object = $variables['object'];
+  $variables['islandora_object'] = $islandora_object;
+
+  $repository = $islandora_object->repository;
+  module_load_include('inc', 'islandora', 'includes/datastream');
+  module_load_include('inc', 'islandora', 'includes/utilities');
+  module_load_include('inc', 'islandora', 'includes/metadata');
+
+  $variables['parent_collections'] = islandora_get_parents_from_rels_ext($islandora_object);
+  $variables['metadata'] = islandora_retrieve_metadata_markup($islandora_object);
+  $variables['description'] = islandora_retrieve_description_markup($islandora_object);
+
+  $params = array();
+
+  if (isset($islandora_object['JP2']) && islandora_datastream_access(ISLANDORA_VIEW_OBJECTS, $islandora_object['JP2'])) {
+    // Get token to allow access to XACML protected datastreams.
+    // Always use token authentication in case there is a global policy.
+    module_load_include('inc', 'islandora', 'includes/authtokens');
+    $token = islandora_get_object_token($islandora_object->id, 'JP2', 2);
+    $jp2_url = url("islandora/object/{$islandora_object->id}/datastream/JP2/view",
+      array(
+        'absolute' => TRUE,
+        'query' => array('token' => $token),
+      ));
+    // Display large image.
+    $params['jp2_url'] = $jp2_url;
+  }
+
+  $viewer = islandora_get_viewer($params, 'islandora_large_image_viewers', $islandora_object);
+  $variables['islandora_content'] = '';
+  if ($viewer) {
+    if (strpos($viewer, 'islandora-openseadragon') !== FALSE) {
+      if (isset($islandora_object['JP2']) && islandora_datastream_access(ISLANDORA_VIEW_OBJECTS, $islandora_object['JP2'])) {
+        $variables['image_clip'] = theme(
+          'islandora_openseadragon_clipper',
+          array('pid' => $islandora_object->id)
+        );
+      }
+    }
+    $variables['islandora_content'] = $viewer;
+  }
+  // If no viewer is configured just show the jpeg.
+  elseif (isset($islandora_object['JPG']) && islandora_datastream_access(ISLANDORA_VIEW_OBJECTS, $islandora_object['JPG'])) {
+    $params = array(
+      'title' => $islandora_object->label,
+      'path' => url("islandora/object/{$islandora_object->id}/datastream/JPG/view"),
+    );
+    $variables['islandora_content'] = theme('image', $params);
+  }
+  else {
+    $variables['islandora_content'] = NULL;
+  }
+
+  // set the label of the book and also (re)set the parent_collections to the collections where the book is part of.
+  if ($variables['book_object_id']) {
+    $bookobj = islandora_object_load($variables['book_object_id']);
+    if ($bookobj) {
+      $variables['book_object_label'] = $bookobj->label;
+   
+      $variables['parent_collections'] = islandora_get_parents_from_rels_ext($bookobj);
+    }
+  }
+}

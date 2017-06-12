@@ -7,7 +7,7 @@
  * @TODO document available variables
  */
 ?>
-<div id="dc-facet-keywords" class="dc-facet-list dc-checklist">
+<div id="dc-facet-keywords" class="dc-facet-list dc-checklist <?php print $classes; ?>">
   <?php foreach($buckets as $key => $bucket): ?>
     <label>
       <?php print $bucket['link']; ?>

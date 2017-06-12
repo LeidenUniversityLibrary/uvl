@@ -527,7 +527,7 @@ p {
 }
 
 h1, h2 {
-  font-size: 2.8561em;
+  font-size: 2.0em; /* was 2.8561em */;
   line-height: 1.13792em;
   margin-top: 0.8125em;
   margin-bottom: 0.8125em;
@@ -1982,4 +1982,8 @@ div#BookReader {
 html {
   font-size: 100%;
   line-height: 1.625em;
+}
+/* Hide the labels of the items in the search results. */
+.islandora-solr-search-results .islandora-inline-metadata dt.solr-label {
+  display: none;
 }

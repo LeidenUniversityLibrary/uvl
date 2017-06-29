@@ -1987,3 +1987,61 @@ html {
 .islandora-solr-search-results .islandora-inline-metadata dt.solr-label {
   display: none;
 }
+
+/* previous next buttons */
+#block-islandora-solr-search-navigation {
+  position: relative;
+}
+
+#block-islandora-solr-search-navigation .content {
+  position: absolute;
+  right: 0;
+  top: -0.5em;
+}
+
+#block-islandora-solr-search-navigation .content #islandora-solr-search-prev-link,
+#block-islandora-solr-search-navigation .content #islandora-solr-search-return-link,
+#block-islandora-solr-search-navigation .content #islandora-solr-search-next-link {
+  height: 2em;;
+  color: white;
+  margin: 0.2em;;
+  background-color: #626c95;
+  padding-top: 0.3em;
+  border-radius: 3px;
+  font-size: 1.3em;
+}
+
+#block-islandora-solr-search-navigation .content #islandora-solr-search-prev-link A,
+#block-islandora-solr-search-navigation .content #islandora-solr-search-return-link A,
+#block-islandora-solr-search-navigation .content #islandora-solr-search-next-link A {
+  color: white;
+  padding-top: 0.40625em;
+  padding-bottom: 0.40625em;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#block-islandora-solr-search-navigation .content #islandora-solr-search-prev-link A.disabled,
+#block-islandora-solr-search-navigation .content #islandora-solr-search-return-link A.disabled,
+#block-islandora-solr-search-navigation .content #islandora-solr-search-next-link A.disabled {
+  color: lightgray;
+}
+
+#block-islandora-solr-search-navigation .content #islandora-solr-search-prev-link A SPAN,
+#block-islandora-solr-search-navigation .content #islandora-solr-search-return-link A SPAN,
+#block-islandora-solr-search-navigation .content #islandora-solr-search-next-link A SPAN {
+  display: none;
+}
+
+#block-islandora-solr-search-navigation .content #islandora-solr-search-next-link {
+  float: left;
+}
+
+#block-islandora-solr-search-navigation .content #islandora-solr-search-return-link {
+  float: left;
+}
+
+#block-islandora-solr-search-navigation .content #islandora-solr-search-prev-link {
+  float: left;
+}
+

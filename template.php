@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Theme override for theme_menu_link()
  */
@@ -37,7 +38,7 @@ function uvl_menu_link($variables) {
       return $output;
     }
     //Inject block content when url query contains block
-    if (isset($element['#original_link']['options']['query'])) {
+    if (isset($element['#original_link']['options']['query']['block'])) {
       $output = render_block_content(
         $element['#original_link']['options']['query']['block'],
         $element['#original_link']['options']['query']['delta']);
@@ -234,6 +235,11 @@ function uvl_pager($variables) {
 function uvl_preprocess_item_list(&$vars) {
 
   // make sure we're dealing with a pager item list
+  if (isset($vars['attributes']['class'])) {
+    if (!is_array($vars['attributes']['class'])) {
+      $vars['attributes']['class'] = array($vars['attributes']['class']);
+    }
+  }
   if (isset($vars['attributes']['class']) && in_array('pager', $vars['attributes']['class'])) {
     // Add an extra class to item list
     $vars['attributes']['class'][] = 'dc-searchresults-pager';

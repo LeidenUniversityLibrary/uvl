@@ -33,6 +33,7 @@
  <?php endif; ?>
 
  <?php if (count($themed_siblings) > 0): ?>
+   <?php $query_params = drupal_get_query_parameters(); ?>
    <li class="dc-compound-items islandora-compound-thumbs">
      <ul class="dc-grid dc-grid-compound">
    <?php foreach ($themed_siblings as $sibling): ?>
@@ -45,7 +46,7 @@
          )
        ).'</div><h4>'.$sibling['label'].'</h4>',
        'islandora/object/' . $sibling['pid'],
-       array('attributes' => array('title' => $sibling['label']),'html' => TRUE)
+       array('attributes' => array('title' => $sibling['label']),'html' => TRUE, 'query' => $query_params)
      );?>
      </li>
    <?php endforeach; // each themed_siblings ?>

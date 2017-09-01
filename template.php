@@ -22,6 +22,9 @@ function uvl_menu_link($variables) {
     if (url_is_external($element['#href'])) {
       $options['attributes']['target'] = '_blank';
     }
+    if ($element['#href'] === 'user/login') {
+      $options['query'] = drupal_get_destination();
+    }
     $output = l($element['#title'], $element['#href'], $options);
 
     //create fragment link for <nolink> menu items in first level

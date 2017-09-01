@@ -18,8 +18,11 @@ function uvl_menu_link($variables) {
         . $sub_menu . '</div></div>';
     }
 
-    $output = l($element['#title'], $element['#href'],
-      array('attributes' => $element['#attributes']));
+    $options = array('attributes' => $element['#attributes']);
+    if (url_is_external($element['#href'])) {
+      $options['attributes']['target'] = '_blank';
+    }
+    $output = l($element['#title'], $element['#href'], $options);
 
     //create fragment link for <nolink> menu items in first level
     if ($element['#href'] == '<nolink>' && $element['#below']) {
@@ -52,7 +55,6 @@ function uvl_menu_link($variables) {
       '<li class="dc-menu-search">' .
       render_block_content('islandora_solr', 'simple') . '</li>';
     }
-
     return '<li classes="'.$classes.'">' . $output . $sub_menu . '</li>';
 }
 

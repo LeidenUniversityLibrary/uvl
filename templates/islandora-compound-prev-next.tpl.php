@@ -37,7 +37,7 @@
    <li class="dc-compound-items islandora-compound-thumbs">
      <ul class="dc-grid dc-grid-compound">
    <?php foreach ($themed_siblings as $sibling): ?>
-     <li class="dc-grid-item">
+     <li class="dc-grid-item islandora-compound-thumb">
      <?php print l(
        '<div class="dc-grid-pic">'.theme_image(
          array(

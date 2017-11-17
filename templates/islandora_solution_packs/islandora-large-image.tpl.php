@@ -23,6 +23,11 @@
 ?>
 <section class="dc-viewer">
   <div class="islandora-large-image-object islandora" vocab="http://schema.org/" prefix="dcterms: http://purl.org/dc/terms/" typeof="ImageObject">
+    <?php
+    //Render the compound navigation block
+    $block = module_invoke('islandora_compound_object', 'block_view', 'compound_navigation');
+    print render($block['content']);
+    ?>
     <div class="islandora-large-image-content-wrapper clearfix islandora-viewer">
       <?php if ($islandora_content): ?>
         <?php if (isset($image_clip)): ?>
@@ -35,11 +40,6 @@
   </div>
 </section>
   <div class="islandora-large-image-metadata islandora-metadata">
-    <?php
-    //Render the compound navigation block
-    $block = module_invoke('islandora_compound_object', 'block_view', 'compound_navigation');
-    print render($block['content']);
-    ?>
     <?php print $description; ?>
     <div class="dc-sidebox dc-sidebox-right">
       <?php

@@ -34,8 +34,7 @@
 
  <?php if (count($themed_siblings) > 0): ?>
    <?php $query_params = drupal_get_query_parameters(); ?>
-   <li class="dc-compound-items islandora-compound-thumbs">
-     <ul class="dc-grid dc-grid-compound">
+   <ul class="dc-grid dc-grid-compound dc-compound-items islandora-compound-thumbs">
    <?php foreach ($themed_siblings as $sibling): ?>
      <li class="dc-grid-item islandora-compound-thumb">
      <?php print l(
@@ -50,6 +49,6 @@
      );?>
      </li>
    <?php endforeach; // each themed_siblings ?>
-     </ul></div> <!-- //dc-compound-items islandora-compound-thumbs -->
+   </ul> <!-- //dc-compound-items islandora-compound-thumbs -->
  <?php endif; // count($themed_siblings) > 0 ?>
  </div>

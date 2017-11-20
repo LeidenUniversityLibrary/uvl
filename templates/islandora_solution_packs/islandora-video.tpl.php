@@ -20,11 +20,6 @@
 ?>
 
 <div class="islandora-video-object islandora" vocab="http://schema.org/" prefix="dcterms: http://purl.org/dc/terms/" typeof="VideoObject">
-  <?php
-  //Render the compound navigation block
-  $block = module_invoke('islandora_compound_object', 'block_view', 'compound_navigation');
-  print render($block['content']);
-  ?>
   <div class="islandora-video-content-wrapper clearfix islandora-viewer">
     <?php if ($islandora_content): ?>
       <div class="islandora-video-content">
@@ -32,6 +27,11 @@
       </div>
     <?php endif; ?>
   </div>
+  <?php
+  //Render the compound navigation block
+  $block = module_invoke('islandora_compound_object', 'block_view', 'compound_navigation');
+  print render($block['content']);
+  ?>
   <div class="islandora-video-metadata islandora-metadata">
     <?php print $description; ?>
     <div class="dc-sidebox dc-sidebox-right">

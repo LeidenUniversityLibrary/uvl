@@ -858,7 +858,6 @@ body {
   }
   .islandora-compound-prev-next--hierarchical.table-of-contents ~ .islandora-viewer {
     display: block;
-    width: 70%;
   }
 
   .islandora-compound-prev-next--hierarchical.table-of-contents.aside {

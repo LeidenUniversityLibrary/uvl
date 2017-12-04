@@ -2049,3 +2049,172 @@ html {
   float: left;
 }
 
+/* EAD begin */
+.islandora-ead-object {
+  clear: both;
+  padding-bottom: 2.5em;
+}
+.islandora-ead-object .ead-content {
+  background-color: #F2F2F2;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 15px;
+}
+.islandora-ead-object .ead-content #divMain {
+  overflow: scroll;
+  max-height: 50em; 
+  background-color: white;
+}
+.ead-whole {
+  padding-top: 1.5em;
+}
+.ead-content table {
+  border-collapse: initial;
+}
+.ead-content hr {
+  border: none;
+  height: 1px;
+  color: gray;
+  background-color: lightgray;
+}
+.islandora-ead-object .ead-toc .toc-header {
+  position: relative;
+  font-size: 1.3em;
+  line-height: 1.25em;
+  padding-top: 0.325em;
+  padding-bottom: 0.325em;
+  padding-left: 1em;
+  color: #fff;
+  background: #001158;
+  margin-bottom: 1em;
+  margin-top:0;
+}
+.islandora-ead-object .ead-toc .toc-header::after {
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #001158;
+  bottom: -8px;
+  content: "";
+  height: 0;
+  left: 1.125em;
+  position: absolute;
+  width: 0;
+}
+
+.islandora-ead-object .ead-toc li a.active {
+        background-color: #7f88ab;
+        color: white;
+}
+
+.islandora-ead-object .ead-toc .toc-header #closetoc {
+        position:absolute;
+        right:1em;
+}
+
+.islandora-ead-object .ead-toc .toc-header + ul {
+        padding-top: 2.5em;
+}
+
+.islandora-ead-object .ead-toc ul {
+        list-style-type: none;
+        padding: 0;
+}
+
+.islandora-ead-object .ead-toc ul ul {
+        padding-left: 2em;
+        border-top: solid 1px #ddd;
+}
+
+.islandora-ead-object .ead-toc li {
+        padding-top: 0.40625em;
+        padding-bottom: 0.40625em;
+        border-bottom: solid 1px #ddd;
+}
+
+.islandora-ead-object .ead-toc li li:last-child {
+        border-bottom: none 0px #000;
+}
+
+.islandora-ead-object .ead-toc {
+        position: relative;
+}
+.islandora-ead-object .ead-toc .toc-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.islandora-ead-object .ead-toc .toc-header #closetoc .fa {
+  color: white;
+}
+
+.islandora-ead-object .ead-toc > DIV {
+                overflow: scroll;
+                max-height: 20em;
+}
+
+.islandora-ead-object .ead-toc > DIV > UL {
+          padding-top: 2.5em;
+}
+
+.islandora-ead-object .ead-toc.aside DIV {
+          transition: max-height 0.4s;
+                max-height: 2.5em;
+}
+
+.islandora-ead-object .ead-toc.aside .toc-header #closetoc {
+  display: none;
+}
+
+.islandora-ead-object .ead-toc.expanding DIV {
+          transition: max-height 0.4s;
+                max-height: 20em;
+}
+
+
+@media all and (min-width:63.75em) {
+  .islandora-ead-object .ead-toc {
+    width: calc(30% - 40px);
+    float: right;
+    margin-left: 40px;
+  }
+  .islandora-ead-object .ead-toc ~ .ead-content {
+    display: block;
+  }
+
+  .islandora-ead-object .ead-toc.aside {
+    transition: width 0.4s;
+    width: 2em;
+    right: 0;
+    margin-left: 0;
+  }
+  .islandora-ead-object .ead-toc.aside .toc-header {
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    transform-origin: left bottom 0;
+    transform: rotate(90deg) translate(-1.9em,25%);
+  }
+  .islandora-ead-object .ead-toc.aside DIV {
+        overflow: hidden;
+  }
+  .islandora-ead-object .ead-toc.aside > DIV > UL {
+     visibility: hidden;
+  }
+  .islandora-ead-object .ead-toc.expanding > DIV > UL {
+     visibility: hidden;
+  }
+  .islandora-ead-object .ead-toc.expanding {
+    transition: width 0.4s;
+    width: calc(30% - 40px);
+  }
+  .islandora-ead-object .ead-toc.expanding .toc-header {
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    transform-origin: left bottom 0;
+    transform: rotate(0deg) translate(0px,0px);
+  }
+}
+/* ead eind */
+

@@ -362,3 +362,19 @@ function uvl_preprocess_islandora_book_page(&$variables) {
     }
   }
 }
+
+function uvl_preprocess_islandora_ead(&$variables) {
+  drupal_add_js(drupal_get_path('theme', 'uvl') . '/js/ead.js', 'file');
+  $islandora_object = $variables['object'];
+  $variables['islandora_object'] = $islandora_object;
+
+  $repository = $islandora_object->repository;
+  module_load_include('inc', 'islandora', 'includes/datastream');
+  module_load_include('inc', 'islandora', 'includes/utilities');
+  module_load_include('inc', 'islandora', 'includes/metadata');
+
+  $variables['parent_collections'] = islandora_get_parents_from_rels_ext($islandora_object);
+  $variables['metadata'] = islandora_retrieve_metadata_markup($islandora_object);
+  $variables['description'] = islandora_retrieve_description_markup($islandora_object);
+}
+

@@ -752,6 +752,148 @@ body {
   border-bottom: solid 1px #ddd;
 }
 
+/* hierarchical begin */
+/* LvS */
+.islandora-compound-prev-next--hierarchical.table-of-contents .toc-header {
+  position: relative;
+  font-size: 1.3em;
+  line-height: 1.25em;
+  padding-top: 0.325em;
+  padding-bottom: 0.325em;
+  padding-left: 1em;
+  color: #fff;
+  background: #001158;
+  margin-bottom: 1em;
+  margin-top:0;
+}
+.islandora-compound-prev-next--hierarchical.table-of-contents .toc-header::after {
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #001158;
+  bottom: -8px;
+  content: "";
+  height: 0;
+  left: 1.125em;
+  position: absolute;
+  width: 0;
+}
+
+.islandora-compound-prev-next--hierarchical.table-of-contents li a.active {
+	background-color: #7f88ab;
+	color: white;
+}
+
+.islandora-compound-prev-next--hierarchical.table-of-contents .toc-header #closetoc {
+	position:absolute;
+	right:1em;
+}
+
+.islandora-compound-prev-next--hierarchical.table-of-contents .toc-header + ul {
+	padding-top: 2.5em;   
+}
+
+.islandora-compound-prev-next--hierarchical.table-of-contents ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.islandora-compound-prev-next--hierarchical.table-of-contents ul ul {
+	padding-left: 2em;
+	border-top: solid 1px #ddd;
+}
+
+.islandora-compound-prev-next--hierarchical.table-of-contents li {
+	padding-top: 0.40625em;
+	padding-bottom: 0.40625em;
+	border-bottom: solid 1px #ddd;
+}
+
+.islandora-compound-prev-next--hierarchical.table-of-contents li li:last-child {
+	border-bottom: none 0px #000;
+}
+
+.islandora-compound-prev-next--hierarchical.table-of-contents {
+	position: relative;
+}
+
+.islandora-compound-prev-next--hierarchical.table-of-contents .toc-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.islandora-compound-prev-next--hierarchical.table-of-contents .toc-header #closetoc .fa {
+  color: white;
+}
+
+.islandora-compound-prev-next--hierarchical.table-of-contents > DIV {
+		overflow: scroll;
+		max-height: 20em;
+}
+
+.islandora-compound-prev-next--hierarchical.table-of-contents > DIV > UL {
+	  padding-top: 2.5em;
+}
+
+.islandora-compound-prev-next--hierarchical.table-of-contents.aside DIV {
+	  transition: max-height 0.4s;
+		max-height: 2.5em;
+}
+
+.islandora-compound-prev-next--hierarchical.table-of-contents.aside .toc-header #closetoc {
+  display: none;
+}
+
+.islandora-compound-prev-next--hierarchical.table-of-contents.expanding DIV {
+	  transition: max-height 0.4s;
+		max-height: 20em;
+}
+
+
+@media all and (min-width:63.75em) {
+  .islandora-compound-prev-next--hierarchical.table-of-contents {
+    width: calc(30% - 40px);
+    float: right;
+    margin-left: 40px;
+  }
+  .islandora-compound-prev-next--hierarchical.table-of-contents ~ .islandora-viewer {
+    display: block;
+  }
+
+  .islandora-compound-prev-next--hierarchical.table-of-contents.aside {
+    transition: width 0.4s;
+    width: 2em;
+    right: 0;
+    margin-left: 0;
+  }
+  .islandora-compound-prev-next--hierarchical.table-of-contents.aside .toc-header {
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    transform-origin: left bottom 0;
+    transform: rotate(90deg) translate(-1.9em,25%);
+  }
+  .islandora-compound-prev-next--hierarchical.table-of-contents.aside DIV {
+    	overflow: hidden;
+  }
+  .islandora-compound-prev-next--hierarchical.table-of-contents.aside > DIV > UL {
+     visibility: hidden;
+  }
+  .islandora-compound-prev-next--hierarchical.table-of-contents.expanding > DIV > UL {
+     visibility: hidden;
+  }
+  .islandora-compound-prev-next--hierarchical.table-of-contents.expanding {
+    transition: width 0.4s;
+    width: calc(30% - 40px);
+  }
+  .islandora-compound-prev-next--hierarchical.table-of-contents.expanding .toc-header {
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    transform-origin: left bottom 0;
+    transform: rotate(0deg) translate(0px,0px);
+  }
+}
+/* hierarchical eind */
+
 #theheader {
   padding: 0;
   background-color: #fff;
@@ -1222,6 +1364,7 @@ h2.title {
 }
 
 .islandora-compound-prev-next {
+  width: 100%;
   margin-bottom: inherit !important;
 }
 
@@ -1246,10 +1389,6 @@ h2.title {
 
 .islandora-solr-search-results tr {
   background-color: inherit !important;
-}
-
-li.dc-compound-items {
-  width: 100%;
 }
 
 .dc-grid-compound .dc-grid-item {
@@ -1957,15 +2096,23 @@ div#BookReader #BRtoolbarbuttons BUTTON.share {
   height: 120px;
 }
 .dc-grid-compound h4 {
-  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
   margin-top: 2px;
   font-size: 1em;
   line-height: 1.625em;
   font-weight: normal;
   padding-left: 5px;
   padding-right: 5px;
+  max-height: 6.5em;
+  text-align: center;
+}
+
+.dc-grid-compound A.active h4 {
+    background-color: #7f88ab;
+    color: white;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
 }
 
 .dc-grid-related {

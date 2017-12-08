@@ -32,14 +32,15 @@
           <?php print $islandora_content; ?>
         </div>
       <?php endif; ?>
-  </div>
-</section>
-  <div class="islandora-large-image-metadata islandora-metadata">
+    </div>
     <?php
     //Render the compound navigation block
     $block = module_invoke('islandora_compound_object', 'block_view', 'compound_navigation');
     print render($block['content']);
     ?>
+  </div>
+</section>
+  <div class="islandora-large-image-metadata islandora-metadata">
     <?php print $description; ?>
     <div class="dc-sidebox dc-sidebox-right">
       <?php

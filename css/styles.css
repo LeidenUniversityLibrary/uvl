@@ -2156,10 +2156,16 @@ html {
   height: 2em;;
   color: white;
   margin: 0.2em;;
-  background-color: #626c95;
+  background-color: #7f88ab;
   padding-top: 0.3em;
   border-radius: 3px;
   font-size: 1.3em;
+}
+
+#block-islandora-solr-search-navigation .content #islandora-solr-search-prev-link:hover,
+#block-islandora-solr-search-navigation .content #islandora-solr-search-return-link:hover,
+#block-islandora-solr-search-navigation .content #islandora-solr-search-next-link:hover {
+  background-color: #626c95;
 }
 
 #block-islandora-solr-search-navigation .content #islandora-solr-search-prev-link A,
@@ -2175,7 +2181,7 @@ html {
 #block-islandora-solr-search-navigation .content #islandora-solr-search-prev-link A.disabled,
 #block-islandora-solr-search-navigation .content #islandora-solr-search-return-link A.disabled,
 #block-islandora-solr-search-navigation .content #islandora-solr-search-next-link A.disabled {
-  color: lightgray;
+  color: #b3b3b3;
 }
 
 #block-islandora-solr-search-navigation .content #islandora-solr-search-prev-link A SPAN,
@@ -2364,4 +2370,81 @@ html {
   }
 }
 /* ead eind */
+
+/* home home keep show all collections button */
+@media all and (max-width:1065px) {
+  .dc-feat-banner IMG {
+    max-height: 530px;
+  }
+  .dc-feat-browser UL LI.views-row:nth-last-child(2) {
+    display:none;
+  }
+}
+@media all and (max-width:880px) {
+  .dc-feat-banner IMG {
+    max-height: 440px;
+  }
+  .dc-feat-browser UL LI.views-row:nth-last-child(2),
+  .dc-feat-browser UL LI.views-row:nth-last-child(3) {
+    display:none;
+  }
+}
+@media all and (max-width:610px) {
+  .dc-feat-banner IMG {
+    max-height: 305px;
+  }
+  .dc-feat-browser UL LI.views-row:nth-last-child(2),
+  .dc-feat-browser UL LI.views-row:nth-last-child(3),
+  .dc-feat-browser UL LI.views-row:nth-last-child(4) {
+    display:none;
+  }
+}
+@media all and (max-width:430px) {
+  .dc-feat-banner IMG {
+    max-height: 165px;
+  }
+  .dc-feat-browser UL LI.views-row:nth-last-child(2),
+  .dc-feat-browser UL LI.views-row:nth-last-child(3),
+  .dc-feat-browser UL LI.views-row:nth-last-child(4),
+  .dc-feat-browser UL LI.views-row:nth-last-child(5) {
+    display:none;
+  }
+}
+
+/* collection icon in search result */
+.islandora-solr-search-result.collectioncmodel .islandora-inline-metadata DD:first-of-type::before {
+  content: "";
+  font-family: FontAwesome;
+  font-size: 1.3em;
+  margin-right: 0.3em;
+  vertical-align: middle;
+  color: #001158;
+}
+
+/* white line between physical and digital metadata, above handle */
+.islandora-metadata TR.mods_identifier_hdl_ms > TH,
+.islandora-metadata TR.mods_identifier_hdl_ms > TD {
+  padding-top: 2em;
+}
+/* title for item limited */
+.dc-feature ~ h2#page-title.title {
+  max-width: calc(100% - 135px);
+}
+/* metadata in search result */
+.islandora-solr-search-results .islandora-inline-metadata dt.solr-label {
+  display: initial;
+  color: rgb(34, 34, 34);
+  font-family: VestulaSemibold;
+}
+.islandora-solr-search-results .islandora-inline-metadata dd.solr-value {
+  color: rgb(1, 33, 104);
+  font-family: Georgia;
+}
+.islandora-solr-search-results .islandora-inline-metadata dt.solr-label.dc-title {
+  display:none;
+}
+.islandora-solr-search-results .islandora-inline-metadata dd.solr-value.dc-title {
+  font-size: 125%;
+  font-family: VestulaSemibold;
+}
 

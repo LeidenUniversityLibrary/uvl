@@ -2051,9 +2051,14 @@ div#BookReader #BRtoolbarbuttons BUTTON.share {
   font-weight: normal;
 }
 
+.dc-grid-collectiongroups {
+  justify-content: space-around;
+}
+
 .dc-grid-collectiongroups .dc-grid-item {
-  min-width: 100px;
-  width: 12%;
+  min-width: 125px;
+  width: 17.5%;
+  max-width: 250px;
 }
 .dc-grid-collectiongroups .dc-grid-pic {
   height: 100px;
@@ -2391,7 +2396,7 @@ html {
 }
 @media all and (max-width:610px) {
   .dc-feat-banner IMG {
-    max-height: 305px;
+    max-height: 250px;
   }
   .dc-feat-browser UL LI.views-row:nth-last-child(2),
   .dc-feat-browser UL LI.views-row:nth-last-child(3),

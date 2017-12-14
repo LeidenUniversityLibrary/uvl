@@ -18,7 +18,8 @@
     <?php $row_result = 0; ?>
     <?php foreach($results as $key => $result): ?>
       <!-- Search result -->
-      <tr class="islandora-solr-search-result clear-block <?php print $row_result % 2 == 0 ? 'odd' : 'even'; ?>">
+      <?php $contentmodelclass = strtolower(implode(' ', preg_replace(array('/info:fedora/','#/islandora:#','#[/:]#'), '', $result['content_models']))); ?>
+      <tr class="islandora-solr-search-result clear-block <?php print $row_result % 2 == 0 ? 'odd' : 'even'; print ' ' . $contentmodelclass ?>">
 
           <!-- Thumbnail -->
           <td>

@@ -26,8 +26,8 @@
         <table class="islandora-inline-metadata islandora-metadata-fields">
           <tbody>
           <?php $row_field = 0; ?>
-          <?php foreach($solr_fields as $value): ?>
-            <tr>
+          <?php foreach($solr_fields as $solr_field => $value): ?>
+            <tr class="<?php print $solr_field; ?>">
               <th class="<?php print $row_field == 0 ? ' first' : ''; ?>"><?php print $value['display_label']; ?></th>
               <td class="<?php print $row_field == 0 ? ' first' : ''; ?>"><?php print check_markup(implode("\n", $value['value']), 'islandora_solr_metadata_filtered_html'); ?></td>
               <?php $row_field++; ?>

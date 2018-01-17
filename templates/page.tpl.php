@@ -86,8 +86,8 @@
         <div class="dc-centercontent" id="thetitle">
           <div class="dc-logo">
             <?php if ($logo): ?>
-              <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-                <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+              <a href="https://www.universiteitleiden.nl" target="_blank">
+                <img src="<?php print $logo; ?>" alt="Universiteit Leiden" />
               </a>
             <?php endif; ?>
           </div>

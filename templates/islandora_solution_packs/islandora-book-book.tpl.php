@@ -5,17 +5,18 @@
  */
 
 ?>
+
 <?php if(isset($viewer)): ?>
   <div id="book-viewer">
     <?php print $viewer; ?>
   </div>
 <?php endif; ?>
-
 <?php
 //Render the compound navigation block
 $block = module_invoke('islandora_compound_object', 'block_view', 'compound_navigation');
 print render($block['content']);
 ?>
+
 <div class="dc-sidebox dc-sidebox-right">
       <?php
 

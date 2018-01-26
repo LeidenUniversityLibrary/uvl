@@ -2417,7 +2417,8 @@ html {
 }
 
 /* collection icon in search result */
-.islandora-solr-search-result.collectioncmodel .islandora-inline-metadata DD:first-of-type::before {
+.islandora-solr-search-result.collectioncmodel .islandora-inline-metadata DD:first-of-type A::before,
+.islandora-solr-search-results .solr-grid-field.collectioncmodel DD.solr-grid-caption A::before {
   content: "";
   font-family: FontAwesome;
   font-size: 1.3em;

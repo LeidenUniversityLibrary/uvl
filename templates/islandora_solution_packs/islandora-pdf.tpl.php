@@ -8,6 +8,7 @@
  */
 ?>
 
+<section class="dc-viewer">
 <div class="islandora-pdf-object islandora" vocab="http://schema.org/" prefix="dcterms: http://purl.org/dc/terms/" typeof="Article">
   <div class="islandora-pdf-content-wrapper clearfix islandora-viewer">
     <?php if (isset($islandora_content)): ?>
@@ -56,3 +57,4 @@
     </div>
   </div>
 </div>
+</section>

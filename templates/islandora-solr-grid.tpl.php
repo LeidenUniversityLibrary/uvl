@@ -19,23 +19,13 @@
       <?php $contentmodelclass = strtolower(implode(' ', preg_replace(array('/info:fedora/','#/islandora:#','#[/:]#'), '', $result['content_models']))); ?>
       <dl class="solr-grid-field <?php print ' ' . $contentmodelclass ?>">
         <dt class="solr-grid-thumb">
-          <?php
-            $image = '<img src="' . url($result['thumbnail_url'], array('query' => $result['thumbnail_url_params'])) . '" />';
-            print l($image, $result['object_url'], array(
-              'html' => TRUE,
-              'query' => $result['object_url_params'],
-              'fragment' => isset($result['object_url_fragment']) ? $result['object_url_fragment'] : '',
-            ));
-          ?>
+          <?php print $result['thumbnail']; ?>
         </dt>
         <dd class="solr-grid-caption">
-          <?php
-            $object_label = isset($result['object_label']) ? $result['object_label'] : '';
-            print l($object_label, $result['object_url'], array(
-              'query' => $result['object_url_params'],
-              'fragment' => isset($result['object_url_fragment']) ? $result['object_url_fragment'] : '',
-            ));
-          ?>
+          <?php $firstField = reset($result['solr_doc']); ?>
+          <dd class="solr-value <?php print $firstField['class']; ?>">
+            <?php print $firstField['value']; ?>
+          </dd>
         </dd>
       </dl>
     <?php endforeach; ?>

@@ -122,6 +122,43 @@ function uvl_preprocess_node(&$vars) {
 }
 
 /**
+ * Implements hook_preprocess_islandora_solr().
+ */
+function uvl_preprocess_islandora_solr_grid(&$variables) {
+  uvl_preprocess_islandora_solr($variables);
+}
+
+/**
+ * Implements hook_preprocess_islandora_solr_grid().
+ */
+function uvl_preprocess_islandora_solr(&$variables) {
+  $results = $variables['results'];
+  foreach ($results as $key => $result) {
+    // Thumbnail.
+    $path = url($result['thumbnail_url'], array('query' => $result['thumbnail_url_params']));
+    $image_params = array(
+      'path' => $path,
+    );
+    if (isset($result['object_label'])) {
+      $image_params['alt'] = $result['object_label'];
+    }
+    $image = theme('image', $image_params);
+    $options = array('html' => TRUE);
+    if (isset($result['object_label'])) {
+      $options['attributes']['title'] = $result['object_label'];
+    }
+    if (isset($result['object_url_params'])) {
+      $options['query'] = $result['object_url_params'];
+    }
+    if (isset($result['object_url_fragment'])) {
+      $options['fragment'] = $result['object_url_fragment'];
+    }
+    // Thumbnail link.
+    $variables['results'][$key]['thumbnail'] = l($image, $result['object_url'], $options);
+  }
+}
+
+/**
  * Implements hook_preprocess_page().
  */
 function uvl_preprocess_page(&$vars, $hook) {
@@ -357,7 +394,7 @@ function uvl_preprocess_islandora_book_page(&$variables) {
     $bookobj = islandora_object_load($variables['book_object_id']);
     if ($bookobj) {
       $variables['book_object_label'] = $bookobj->label;
-   
+
       $variables['parent_collections'] = islandora_get_parents_from_rels_ext($bookobj);
     }
   }
@@ -377,4 +414,3 @@ function uvl_preprocess_islandora_ead(&$variables) {
   $variables['metadata'] = islandora_retrieve_metadata_markup($islandora_object);
   $variables['description'] = islandora_retrieve_description_markup($islandora_object);
 }
-

@@ -23,9 +23,7 @@
         </dt>
         <dd class="solr-grid-caption">
           <?php $firstField = reset($result['solr_doc']); ?>
-          <dd class="solr-value <?php print $firstField['class']; ?>">
-            <?php print $firstField['value']; ?>
-          </dd>
+          <?php print $firstField['value']; ?>
         </dd>
       </dl>
     <?php endforeach; ?>

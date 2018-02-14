@@ -41,7 +41,7 @@ $parameters_list['display'] = 'default';
 
 $parameters_grid = array();
 $parameters_grid = $parameters;
-$parameters_grid['display'] = 'grid';
+$parameters_grid['display'] = 'alternativegrid';
 
 //Get statest based on query parameter
 if(is_array($parameters) && isset($parameters['display'])){

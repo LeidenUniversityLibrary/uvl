@@ -155,13 +155,22 @@ function uvl_preprocess_islandora_solr(&$variables) {
     }
     // Thumbnail link.
     $variables['results'][$key]['thumbnail'] = l($image, $result['object_url'], $options);
-    // Create linked object label
-    $labelParts = array(
-      'mods_titleInfo_nonSort_s' => $result['solr_doc']['mods_titleInfo_nonSort_s']['value'],
-      'mods_titleInfo_title_s' => $result['solr_doc']['mods_titleInfo_title_s']['value'],
-    );
-    $labelPartSeparator = substr($labelParts['mods_titleInfo_nonSort_s'], -1) == "'" ? "" : " ";
-    $variables['results'][$key]['objectLabel'] = l(implode($labelParts, $labelPartSeparator), $result['object_url'], $options);
+  }
+}
+
+/**
+ * Implements hook_islandora_solr_results_alter()
+ */
+function uvl_islandora_solr_results_alter(&$search_result, $query_processor) {
+  foreach ($search_result as $object_index => $object_result) {
+    if(isset($search_result[$object_index]['solr_doc']['mods_titleInfo_title_s'])){
+      //Modify object_label property
+      $nonSort  = $object_result['solr_doc']['mods_titleInfo_nonSort_s'];
+      $title    = $object_result['solr_doc']['mods_titleInfo_title_s'];
+      $labelPartSeparator = (empty($nonSort) || substr($nonSort, -1) == "'" ? "" : " ");
+      // Set title and object label
+      $search_result[$object_index]['solr_doc']['mods_titleInfo_title_s'] = $nonSort . $labelPartSeparator . $title;
+    }
   }
 }
 

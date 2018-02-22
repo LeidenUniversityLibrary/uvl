@@ -35,9 +35,6 @@
                 'mods_titleInfo_title_s' => $result['solr_doc']['mods_titleInfo_title_s']['value'],
               );
             ?>
-            <dd class="solr-value objectLabel">
-              <?php print $result['objectLabel']; ?>
-            </dd>
             <?php foreach($result['solr_doc'] as $key => $value): ?>
               <dt class="solr-label <?php print $value['class']; ?>">
                 <?php print $value['label']; ?>

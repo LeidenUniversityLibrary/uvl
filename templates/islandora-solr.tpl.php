@@ -35,16 +35,10 @@
                 'mods_titleInfo_title_s' => $result['solr_doc']['mods_titleInfo_title_s']['value'],
               );
             ?>
-            <dd class="solr-value titleParts">
-              <?php
-                print $titleParts['mods_titleInfo_nonSort_s'];
-                if(substr($titleParts['mods_titleInfo_nonSort_s'], -1) !== "'"){
-                  print " ";// Print a space except when nonsort ends with an apostrophe
-                }
-                print $titleParts['mods_titleInfo_title_s'];
-              ?>
+            <dd class="solr-value objectLabel">
+              <?php print $result['objectLabel']; ?>
             </dd>
-            <?php foreach(array_diff_key($result['solr_doc'], $titleParts) as $key => $value): ?>
+            <?php foreach($result['solr_doc'] as $key => $value): ?>
               <dt class="solr-label <?php print $value['class']; ?>">
                 <?php print $value['label']; ?>
               </dt>

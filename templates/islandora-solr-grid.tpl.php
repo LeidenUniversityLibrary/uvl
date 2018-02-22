@@ -22,8 +22,7 @@
           <?php print $result['thumbnail']; ?>
         </dt>
         <dd class="solr-grid-caption">
-          <?php $firstField = reset($result['solr_doc']); ?>
-          <?php print $firstField['value']; ?>
+          <?php print $result['objectLabel']; ?>
         </dd>
       </dl>
     <?php endforeach; ?>

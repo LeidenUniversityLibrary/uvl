@@ -122,14 +122,14 @@ function uvl_preprocess_node(&$vars) {
 }
 
 /**
- * Implements hook_preprocess_islandora_solr().
+ * Implements hook_preprocess_islandora_solr_grid().
  */
 function uvl_preprocess_islandora_solr_grid(&$variables) {
   uvl_preprocess_islandora_solr($variables);
 }
 
 /**
- * Implements hook_preprocess_islandora_solr_grid().
+ * Implements hook_preprocess_islandora_solr().
  */
 function uvl_preprocess_islandora_solr(&$variables) {
   $results = $variables['results'];
@@ -155,6 +155,13 @@ function uvl_preprocess_islandora_solr(&$variables) {
     }
     // Thumbnail link.
     $variables['results'][$key]['thumbnail'] = l($image, $result['object_url'], $options);
+    // Create linked object label
+    $labelParts = array(
+      'mods_titleInfo_nonSort_s' => $result['solr_doc']['mods_titleInfo_nonSort_s']['value'],
+      'mods_titleInfo_title_s' => $result['solr_doc']['mods_titleInfo_title_s']['value'],
+    );
+    $labelPartSeparator = substr($labelParts['mods_titleInfo_nonSort_s'], -1) !== "'" ? "" : " ";
+    $variables['results'][$key]['objectLabel'] = l(implode($labelParts, $labelPartSeparator), $result['object_url'], $options);
   }
 }
 

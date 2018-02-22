@@ -160,7 +160,7 @@ function uvl_preprocess_islandora_solr(&$variables) {
       'mods_titleInfo_nonSort_s' => $result['solr_doc']['mods_titleInfo_nonSort_s']['value'],
       'mods_titleInfo_title_s' => $result['solr_doc']['mods_titleInfo_title_s']['value'],
     );
-    $labelPartSeparator = substr($labelParts['mods_titleInfo_nonSort_s'], -1) !== "'" ? "" : " ";
+    $labelPartSeparator = substr($labelParts['mods_titleInfo_nonSort_s'], -1) == "'" ? "" : " ";
     $variables['results'][$key]['objectLabel'] = l(implode($labelParts, $labelPartSeparator), $result['object_url'], $options);
   }
 }

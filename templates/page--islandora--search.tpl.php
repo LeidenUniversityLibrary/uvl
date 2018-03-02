@@ -121,7 +121,6 @@
           <div class="dc-feature-bg"></div>
           <?php endif; ?>
           <div class="dc-centercontent">
-            <?php print $breadcrumb; ?>
           <?php if ($page['content_top']): ?>
             <section class="dc-feature">
               <?php print render($page['content_top']); ?>

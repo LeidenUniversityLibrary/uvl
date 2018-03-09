@@ -2454,3 +2454,11 @@ html {
   font-family: VestulaSemibold;
 }
 
+/* newspaper */
+.islandora-newspaper-content DIV.vertical-tabs {
+  margin: 5px;
+}
+.islandora-newspaper-content DIV.vertical-tabs UL.vertical-tabs-list {
+  margin: 5px;
+}
+

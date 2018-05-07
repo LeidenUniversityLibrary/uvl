@@ -3,7 +3,7 @@
 
 	UV Leiden Digital Collections
 	acdhirr@trilobiet.nl
-	  
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
 /**
@@ -471,7 +471,7 @@ textarea {
   font-weight: normal;
   font-style: normal;
 }
-/* import base 
+/* import base
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 html, button, input, select, textarea,
 .pure-g [class*="pure-u"] {
@@ -586,7 +586,7 @@ h6 {
   font-weight: bold;
 }
 
-/* import layout 
+/* import layout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 * {
   -webkit-box-sizing: border-box;
@@ -614,7 +614,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 
+/*
 	layout styles
 */
 #mobcheck {
@@ -789,7 +789,7 @@ body {
 }
 
 .islandora-compound-prev-next--hierarchical.table-of-contents .toc-header + ul {
-	padding-top: 2.5em;   
+	padding-top: 2.5em;
 }
 
 .islandora-compound-prev-next--hierarchical.table-of-contents ul {
@@ -970,7 +970,7 @@ body {
   margin-bottom: 1.625em;
 }
 
-/* import content 
+/* import content
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* indent
 .dc-content h2 ~ * {
@@ -1476,7 +1476,7 @@ div#BRpage {
 
 .block-islandora-compound-parent-metadata-block H3 {
   margin: 0;
-  padding: 1.4em 0 0 20px; 
+  padding: 1.4em 0 0 20px;
 }
 
 .islandora-viewer + .islandora-metadata {
@@ -1503,7 +1503,7 @@ div#BookReader #BRtoolbarbuttons BUTTON.share {
   display: none;
 }
 
-/* import modules 
+/* import modules
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .dc-menu {
   width: 100%;
@@ -2222,7 +2222,7 @@ html {
 }
 .islandora-ead-object .ead-content #divMain {
   overflow: scroll;
-  max-height: 50em; 
+  max-height: 50em;
   background-color: white;
 }
 .ead-whole {
@@ -2462,3 +2462,31 @@ html {
   margin: 5px;
 }
 
+/* EAD print styles */
+@media print{
+    .ead-toc{
+        display:none;
+    }
+
+    .ead-content .body{
+        overflow:visible !important;
+        max-height:none !important;
+    }
+
+    .ead-content, .ead-whole, .ead-content, .dc-content, .dc-centercontent, body, .islandora-ead-object{
+        padding:0 !important;
+        background:none;
+        border:0;
+        margin:0;
+        max-width:none;
+        background-color:white;
+    }
+
+    .tabs, .title, #page > #theheader, .region-page-top, .dc-sidebox, .dc-box, footer#thefooter{
+        display:none;
+    }
+
+    html{
+        color:black;
+    }
+}

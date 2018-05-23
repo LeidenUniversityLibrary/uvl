@@ -38,7 +38,7 @@
    <?php foreach ($themed_siblings as $sibling): ?>
      <li class="dc-grid-item islandora-compound-thumb">
      <?php
-       $label = preg_replace('/^\s*' . preg_quote($parent_label) . '[ ,.;:\/-]+/', "", $sibling['label']);
+       $label = preg_replace('!^\s*' . preg_quote($parent_label, '!') . '[ ,.;:/-]+!', "", $sibling['label']);
        if ($label === $sibling['label']) {
          if (preg_match('/^(.*)\.\.\.[ ,.;:\/-]+(.*)$/', $label, $matches)) {
            $partofparent = $matches[1];
@@ -46,6 +46,9 @@
              $label = $matches[2];
            }
          }
+       }
+       if ($label === NULL || strlen($label) ==  0 || ctype_space($label)) {
+         $label = $sibling['label'];
        }
        print l(
        '<div class="dc-grid-pic">'.theme_image(

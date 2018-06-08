@@ -39,7 +39,7 @@
        <i class="fa fa-close" aria-hidden="true"></i>
      </A>
   </h3>
-  <div class="toc-content">
+  <div class="toc-content dc-compound-items islandora-compound-thumbs">
    <ul>
    <?php
      $hierarchical = array();
@@ -61,7 +61,7 @@
      $display_level = function($children) use (&$display_level) {
        $query_params = drupal_get_query_parameters();
        foreach ($children as $child) {
-         print '<li>';
+         print '<li class="dc-grid-item islandora-compound-thumb">';
          if (isset($child['label'], $child['pid'])) {
            print l($child['label'], 'islandora/object/' . $child['pid'], array('attributes' => array('title' => $child['label']), 'query' => $query_params)); 
          }

@@ -38,25 +38,13 @@
    <?php foreach ($themed_siblings as $sibling): ?>
      <li class="dc-grid-item islandora-compound-thumb">
      <?php
-       $label = preg_replace('!^\s*' . preg_quote($parent_label, '!') . '[ ,.;:/-]+!', "", $sibling['label']);
-       if ($label === $sibling['label']) {
-         if (preg_match('/^(.*)\.\.\.[ ,.;:\/-]+(.*)$/', $label, $matches)) {
-           $partofparent = $matches[1];
-           if (substr($parent_label, 0, strlen($partofparent)) === $partofparent) {
-             $label = $matches[2];
-           }
-         }
-       }
-       if ($label === NULL || strlen($label) ==  0 || ctype_space($label)) {
-         $label = $sibling['label'];
-       }
        print l(
        '<div class="dc-grid-pic">'.theme_image(
          array(
            'path' => $sibling['TN'],
            'attributes' => array('class' => 'dc-object-fit'),
          )
-       ).'</div><h4>'.$label.'</h4>',
+       ).'</div><h4>'.$sibling['shortlabel'].'</h4>',
        'islandora/object/' . $sibling['pid'],
        array('attributes' => array('title' => $sibling['label']),'html' => TRUE, 'query' => $query_params)
      );?>

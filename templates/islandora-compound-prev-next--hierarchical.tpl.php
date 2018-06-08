@@ -45,7 +45,7 @@
      $hierarchical = array();
      foreach ($themed_siblings as $sibling) {
        $hier = &$hierarchical;
-       $level = $sibling['level'];
+       $level = $sibling['relation'];
        $lps = explode('.', $level);
        foreach ($lps as $lp) {
          if (!isset($hier['children'])) {
@@ -58,7 +58,7 @@
        }
      }
     
-     function display_level($children) {
+     $display_level = function($children) use (&$display_level) {
        $query_params = drupal_get_query_parameters();
        foreach ($children as $child) {
          print '<li>';
@@ -67,14 +67,14 @@
          }
          if (isset($child['children'])) {
            print '<ul>';
-           display_level($child['children']);
+           $display_level($child['children']);
            print '</ul>';
          }
          print '</li>';
        }
-     }
+     };
 
-     display_level($hierarchical['children']);
+     $display_level($hierarchical['children']);
 
     ?>
     </ul>

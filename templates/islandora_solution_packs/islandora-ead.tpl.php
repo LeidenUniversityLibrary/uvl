@@ -38,6 +38,13 @@
         $block['list']['#attributes']['class'] = array_unique($block['list']['#attributes']['class']);
       }
 
+      // Add the print button
+      $block['list']['#items'][] = l(
+          '<span>print</span><i class="fa fa-print" aria-hidden="true"></i>',
+          'javascript:window.print();',
+          array('attributes' => array('title' => 'print'),'html' => TRUE, 'external' => TRUE)
+      );
+
       print render($block);
       ?>
       <?php if ($parent_collections): ?>

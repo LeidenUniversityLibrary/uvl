@@ -2446,12 +2446,22 @@ html {
   color: rgb(1, 33, 104);
   font-family: Georgia;
 }
-.islandora-solr-search-results .islandora-inline-metadata dt.solr-label.dc-title {
+.islandora-solr-search-results .islandora-inline-metadata dt.solr-label.mods-titleinfo-title-custom-ms {
   display:none;
 }
-.islandora-solr-search-results .islandora-inline-metadata dd.solr-value.dc-title {
+.islandora-solr-search-results .islandora-inline-metadata dd.solr-value.mods-titleinfo-title-custom-ms {
   font-size: 125%;
   font-family: VestulaSemibold;
+}
+.islandora-solr-search-results .islandora-inline-metadata dt.solr-label.fgs-label-s {
+  display:none;
+}
+.islandora-solr-search-results .islandora-inline-metadata dd.solr-value.fgs-label-s {
+  font-size: 125%;
+  font-family: VestulaSemibold;
+}
+dd.solr-value.mods-titleinfo-title-custom-ms ~ dd.solr-value.fgs-label-s {
+  display: none;
 }
 
 /* newspaper */

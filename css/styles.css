@@ -1509,7 +1509,7 @@ div#BookReader #BRtoolbarbuttons BUTTON.share {
   width: 100%;
   margin-top: 2em;
   border-bottom: 1px solid #fff;
-  background-color: #001158;
+  background-color: #7f88ab;
   font-family: "Vestula";
 }
 
@@ -2470,5 +2470,28 @@ dd.solr-value.mods-titleinfo-title-custom-ms ~ dd.solr-value.fgs-label-s {
 }
 .islandora-newspaper-content DIV.vertical-tabs UL.vertical-tabs-list {
   margin: 5px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {  /*safari and chrome*/
+    #islandora-collection-search-form .form-item-collection-select select {
+        height:27px;
+        line-height:27px;
+        background:#f4f4f4;
+    } 
+}
+#islandora-collection-search-form .form-item-collection-select select::-moz-focus-inner { /*Remove button padding in FF*/ 
+    border: 0;
+    padding: 0;
+}
+@-moz-document url-prefix() { /* targets Firefox only */
+    #islandora-collection-search-form .form-item-collection-select select {
+        padding: 2px 0!important;
+    }
+}        
+@media screen\0 { /* IE Hacks: targets IE 8, 9 and 10 */        
+    #islandora-collection-search-form .form-item-collection-select select {
+        height:27px;
+        line-height:27px;
+    }     
 }
 

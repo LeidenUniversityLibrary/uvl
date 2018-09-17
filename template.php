@@ -56,7 +56,7 @@ function uvl_menu_link($variables) {
       $menu_name == 'main-menu') {
       return '<li>' . $output . $sub_menu . '</li>' .
       '<li class="dc-menu-search">' .
-      render_block_content('islandora_solr', 'simple') . '</li>';
+      render_block_content('islandora_collection_search', 'islandora_collection_search') . '</li>';
     }
     return '<li classes="'.$classes.'">' . $output . $sub_menu . '</li>';
 }
@@ -65,7 +65,7 @@ function uvl_menu_link($variables) {
  * Implements hook_form_alter().
  */
 function uvl_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'islandora_solr_simple_search_form') {
+  if ($form_id == 'islandora_collection_search_form') {
     //change submit button markup
     $form['simple']['submit'] = array(
       '#type' => 'submit',

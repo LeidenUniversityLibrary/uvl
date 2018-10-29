@@ -1851,7 +1851,6 @@ div#BookReader #BRtoolbarbuttons BUTTON.share {
   margin-top: 0em;
   margin-bottom: 0em;
   font-family: "Vestula";
-  text-transform: lowercase;
 }
 .dc-feat-banner .dc-feat-header h3 {
   color: white;

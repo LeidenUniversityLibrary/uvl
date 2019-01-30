@@ -2206,6 +2206,70 @@ html {
   float: left;
 }
 
+/* previous next buttons for books */
+#block-islandora-paged-content-navigator-paged-content-navigator {
+  position: relative;
+}
+
+#block-islandora-paged-content-navigator-paged-content-navigator .content {
+  position: absolute;
+  right: 0;
+  top: -0.5em;
+}
+
+#block-islandora-paged-content-navigator-paged-content-navigator .content #islandora-paged-content-prev-link,
+#block-islandora-paged-content-navigator-paged-content-navigator .content #islandora-paged-content-return-link,
+#block-islandora-paged-content-navigator-paged-content-navigator .content #islandora-paged-content-next-link {
+  height: 2em;;
+  color: white;
+  margin: 0.2em;;
+  background-color: #7f88ab;
+  padding-top: 0.3em;
+  border-radius: 3px;
+  font-size: 1.3em;
+}
+
+#block-islandora-paged-content-navigator-paged-content-navigator .content #islandora-paged-content-prev-link:hover,
+#block-islandora-paged-content-navigator-paged-content-navigator .content #islandora-paged-content-return-link:hover,
+#block-islandora-paged-content-navigator-paged-content-navigator .content #islandora-paged-content-next-link:hover {
+  background-color: #626c95;
+}
+
+#block-islandora-paged-content-navigator-paged-content-navigator .content #islandora-paged-content-prev-link A,
+#block-islandora-paged-content-navigator-paged-content-navigator .content #islandora-paged-content-return-link A,
+#block-islandora-paged-content-navigator-paged-content-navigator .content #islandora-paged-content-next-link A {
+  color: white;
+  padding-top: 0.40625em;
+  padding-bottom: 0.40625em;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#block-islandora-paged-content-navigator-paged-content-navigator .content #islandora-paged-content-prev-link A.disabled,
+#block-islandora-paged-content-navigator-paged-content-navigator .content #islandora-paged-content-return-link A.disabled,
+#block-islandora-paged-content-navigator-paged-content-navigator .content #islandora-paged-content-next-link A.disabled {
+  color: #b3b3b3;
+}
+
+#block-islandora-paged-content-navigator-paged-content-navigator .content #islandora-paged-content-prev-link A SPAN,
+#block-islandora-paged-content-navigator-paged-content-navigator .content #islandora-paged-content-return-link A SPAN,
+#block-islandora-paged-content-navigator-paged-content-navigator .content #islandora-paged-content-next-link A SPAN {
+  display: none;
+}
+
+#block-islandora-paged-content-navigator-paged-content-navigator .content #islandora-paged-content-next-link {
+  float: left;
+}
+
+#block-islandora-paged-content-navigator-paged-content-navigator .content #islandora-paged-content-return-link {
+  float: left;
+}
+
+#block-islandora-paged-content-navigator-paged-content-navigator .content #islandora-paged-content-prev-link {
+  float: left;
+}
+
+
 /* EAD begin */
 .islandora-ead-object {
   clear: both;

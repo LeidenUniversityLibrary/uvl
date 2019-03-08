@@ -2394,6 +2394,10 @@ html {
                 max-height: 20em;
 }
 
+.ead-content a {
+  color: blue;
+  text-decoration: underline;
+}
 
 @media all and (min-width:63.75em) {
   .islandora-ead-object .ead-toc {

@@ -2562,3 +2562,25 @@ dd.solr-value.mods-titleinfo-title-custom-ms ~ dd.solr-value.fgs-label-s {
     }     
 }
 
+/* book buttons */
+.bookNavButton {
+  background-color: #7f88ab;
+  border-radius: 3px;
+  float: right;
+  border: none;
+  padding: 2px;
+  width: 8.2em;
+  position: relative;
+  top: 5px;
+  right: 5px;
+  text-align: center;
+}
+.bookNavButton A {
+  padding : 0;
+  color : white;
+  padding : 5px;
+  font-family : VestulaSemibold;
+}
+.bookNavButton:hover {
+  background-color: #626c95;
+}

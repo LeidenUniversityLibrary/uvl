@@ -51,6 +51,35 @@ jQuery(document).ready( function($) {
 	button.html("<span>List</span>");
 	var button = $(".dc-searchresults-tools a.display-grid");
 	button.html("<span>Grid</span>");
+
+        /* book buttons */
+        var tabs = $("body.page-islandora-object main div.tabs ul.tabs.primary");
+
+        var pagesTab = tabs.find('a[href$="pages"]').parent();
+        if (pagesTab.size() > 0) {
+          var pagesButton = pagesTab.find('a').clone().insertBefore(tabs.parent()).html('View pages').wrap('<DIV/>');
+          if (pagesTab.is('.active')) {
+            pagesButton.parent().hide();
+          }
+
+          var viewTab = tabs.find('li').first();
+          var viewButton = viewTab.find('a').clone().insertBefore(tabs.parent()).html('View book').wrap('<DIV/>'); 
+          if (viewTab.is('.active')) {
+            viewButton.parent().hide();
+          }
+
+          viewButton.add(pagesButton).parent().addClass('bookNavButton');
+          tabs.css({'clear' : 'both'});
+          if (tabs.find('li').size() == 2) {
+            //tabs.css({'visibility' : 'hidden'});
+          }
+          viewButton.add(pagesButton).each(function() {
+            var oldhref = $(this).attr('href');
+            if (oldhref.indexOf('?') == -1 && location.search != '') {
+              $(this).attr('href', oldhref + location.search); 
+            }
+          });
+        }
 });
 
 

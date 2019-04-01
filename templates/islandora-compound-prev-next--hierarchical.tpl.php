@@ -63,7 +63,7 @@
        foreach ($children as $child) {
          print '<li class="dc-grid-item islandora-compound-thumb">';
          if (isset($child['label'], $child['pid'])) {
-           print l($child['label'], 'islandora/object/' . $child['pid'], array('attributes' => array('title' => $child['label']), 'query' => $query_params)); 
+           print l($child['shortlabel'], 'islandora/object/' . $child['pid'], array('attributes' => array('title' => $child['label']), 'query' => $query_params)); 
          }
          if (isset($child['children'])) {
            print '<ul>';

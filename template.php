@@ -378,3 +378,30 @@ function uvl_preprocess_islandora_ead(&$variables) {
   $variables['description'] = islandora_retrieve_description_markup($islandora_object);
 }
 
+function uvl_preprocess_islandora_newspaper_issue(array &$variables) {
+  module_load_include('inc', 'islandora', 'includes/utilities');
+  module_load_include('inc', 'islandora_newspaper', 'includes/utilities');
+  $object = $variables['object'];
+  $parentid = islandora_newspaper_get_newspaper($object);
+  if ($parentid) {
+    $parent = islandora_object_load($parentid);
+    if ($parent) {
+      $variables['parent_collections'] = islandora_get_parents_from_rels_ext($parent);
+    }
+  }
+}
+
+function uvl_preprocess_islandora_newspaper_page(array &$variables) {
+  module_load_include('inc', 'islandora_paged_content', 'includes/utilities');
+  $object = $variables['object'];
+  $results = $object->relationships->get(ISLANDORA_RELS_EXT_URI, 'isPageOf');
+  $result = reset($results);
+  $parentid = isset($result['object']['value']) ? $result['object']['value'] : FALSE;
+  if ($parentid) {
+    $parent = islandora_object_load($parentid);
+    if ($parent) {
+      $variables['issue_object_id'] = $parent->id;
+      $variables['issue_object_label'] = $parent->label;
+    }
+  }
+}

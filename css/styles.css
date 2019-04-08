@@ -2538,6 +2538,9 @@ dd.solr-value.mods-titleinfo-title-custom-ms ~ dd.solr-value.fgs-label-s {
 .islandora-newspaper-content DIV.vertical-tabs UL.vertical-tabs-list {
   margin: 5px;
 }
+.islandora-newspaper-content-wrapper {
+  padding-bottom: 2em;
+}
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {  /*safari and chrome*/
     #islandora-collection-search-form .form-item-collection-select select {

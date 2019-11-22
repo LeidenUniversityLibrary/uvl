@@ -82,7 +82,7 @@
 
 $link = '';
 if(!empty($field_link[0]['url'])){
-  $link = $field_link[0]['url'];
+  $link = url($field_link[0]['url'], $field_link[0]);
 }
 ?>
 <a href="<?php print $link; ?>">

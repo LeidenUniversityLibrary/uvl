@@ -357,7 +357,7 @@ function uvl_preprocess_islandora_book_page(&$variables) {
     $bookobj = islandora_object_load($variables['book_object_id']);
     if ($bookobj) {
       $variables['book_object_label'] = $bookobj->label;
-   
+
       $variables['parent_collections'] = islandora_get_parents_from_rels_ext($bookobj);
     }
   }
@@ -402,6 +402,17 @@ function uvl_preprocess_islandora_newspaper_page(array &$variables) {
     if ($parent) {
       $variables['issue_object_id'] = $parent->id;
       $variables['issue_object_label'] = $parent->label;
+    }
+  }
+}
+
+function uvl_preprocess_islandora_compound_prev_next(array &$variables) {
+  if (module_exists('islandora_imagecache')) {
+    module_load_include('inc', 'islandora_imagecache', 'includes/utilities');
+
+    foreach ($variables['themed_siblings'] as &$sibling) {
+      $sib_obj = islandora_object_load($sibling['pid']);
+      $sibling['TN'] = islandora_imagecache_retrieve_image_cache_image($sib_obj, 'TN', 'compound_object_nav');
     }
   }
 }

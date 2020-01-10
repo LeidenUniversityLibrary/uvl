@@ -378,6 +378,66 @@ function uvl_preprocess_islandora_ead(&$variables) {
   $variables['description'] = islandora_retrieve_description_markup($islandora_object);
 }
 
+function uvl_preprocess_islandora_newspaper(array &$variables) {
+  if (isset($variables['islandora_content_render_array']['tabs'])) {
+    drupal_add_js(drupal_get_path('theme', 'uvl') . '/js/newspaper.js', 'file');
+    drupal_add_css(drupal_get_path('theme', 'uvl') . '/css/newspaper.css', 'file');
+    $tabs = $variables['islandora_content_render_array']['tabs']; 
+    $years = element_children($tabs);
+    $yearselect = array(
+      '#id' => 'islandora_newspaper_select_year',
+      '#type' => 'select',
+      '#title' => t('Year'),
+      '#options' => array(),
+      '#prefix' => "<DIV>",
+      '#suffix' => "</DIV>",
+    );
+    $issues = array(
+    );
+    $useimagecache = module_exists('islandora_imagecache');
+    if ($useimagecache) {
+      module_load_include('inc', 'islandora_imagecache', 'includes/utilities');
+    }
+    foreach ($years as $year) {
+      $yearselect['#options'][$year] = $tabs[$year]['#title'];
+      $issueselect = array(
+        '#type' => 'markup',
+        '#markup' => '',
+      );
+      $months = element_children($tabs[$year]);
+      foreach ($months as $month) {
+        $days = element_children($tabs[$year][$month]);
+        foreach ($days as $day) {
+          foreach ($tabs[$year][$month][$day] as $dayarray) {
+            if ($useimagecache) {
+              $object = menu_get_object('islandora_object', 2, $dayarray['#path']);
+              if ($object) {
+                $tnpath = islandora_imagecache_retrieve_image_cache_image($object); 
+              }
+            }
+            if (!isset($tnpath)) {
+              $tnpath = $dayarray['#path'] . '/datastream/TN/view';
+            }
+            $link = url($dayarray['#path']);
+            $text = $dayarray['#text'];
+foreach(range(1,10) as $i) {
+            $issueselect['#markup'] .= "<dl class=\"newspaperissues year$year\"><dt><a href=\"$link\"><img src=\"$tnpath\"/></a></dt><dd><a href=\"$link\">$i $text</a></dd></dl>";
+}
+          }
+        }
+      }
+      $issues[$year] = $issueselect;
+    }
+    $variables['islandora_content_render_array'] = array(
+      'yearselect' => $yearselect,
+      'issues' => array(
+        '#type' =>  'fieldset',
+        'issues' =>  $issues,
+      ),
+    );
+  }
+}
+
 function uvl_preprocess_islandora_newspaper_issue(array &$variables) {
   module_load_include('inc', 'islandora', 'includes/utilities');
   module_load_include('inc', 'islandora_newspaper', 'includes/utilities');

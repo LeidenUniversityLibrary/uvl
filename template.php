@@ -421,9 +421,7 @@ function uvl_preprocess_islandora_newspaper(array &$variables) {
             }
             $link = url($dayarray['#path']);
             $text = $dayarray['#text'];
-foreach(range(1,100) as $i) {
             $issueselect['#markup'] .= "<dl><dt><a href=\"$link\"><img src=\"/sites/all/themes/uvl/img/loading.gif\" data-src=\"$tnpath\"/></a></dt><dd><a href=\"$link\">$text</a></dd></dl>";
-}
           }
         }
       }

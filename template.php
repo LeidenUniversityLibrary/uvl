@@ -381,6 +381,7 @@ function uvl_preprocess_islandora_ead(&$variables) {
 function uvl_preprocess_islandora_newspaper(array &$variables) {
   if (isset($variables['islandora_content_render_array']['tabs'])) {
     drupal_add_js(drupal_get_path('theme', 'uvl') . '/js/newspaper.js', 'file');
+    drupal_add_js(drupal_get_path('theme', 'uvl') . '/js/lazyimages.js', 'file');
     drupal_add_css(drupal_get_path('theme', 'uvl') . '/css/newspaper.css', 'file');
     $tabs = $variables['islandora_content_render_array']['tabs']; 
     $years = element_children($tabs);
@@ -420,12 +421,13 @@ function uvl_preprocess_islandora_newspaper(array &$variables) {
             }
             $link = url($dayarray['#path']);
             $text = $dayarray['#text'];
-foreach(range(1,10) as $i) {
-            $issueselect['#markup'] .= "<dl class=\"newspaperissues year$year\"><dt><a href=\"$link\"><img src=\"$tnpath\"/></a></dt><dd><a href=\"$link\">$i $text</a></dd></dl>";
+foreach(range(1,100) as $i) {
+            $issueselect['#markup'] .= "<dl><dt><a href=\"$link\"><img src=\"/sites/all/themes/uvl/img/loading.gif\" data-src=\"$tnpath\"/></a></dt><dd><a href=\"$link\">$text</a></dd></dl>";
 }
           }
         }
       }
+      $issueselect['#markup'] = "<div class=\"newspaperissues year$year\">" . $issueselect['#markup'] . "</div>";
       $issues[$year] = $issueselect;
     }
     $variables['islandora_content_render_array'] = array(

@@ -16,6 +16,7 @@ Drupal.behaviors.newspaperIssues = {
 
         issues.not('.year' + selectedYear).hide(0);
         issues.filter('.year' + selectedYear).show(0);
+        $('.islandora-newspaper-content .fieldset-wrapper').scrollTop(0);
       });
     });
   }

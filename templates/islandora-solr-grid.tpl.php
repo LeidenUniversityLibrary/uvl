@@ -20,7 +20,7 @@
       <dl class="solr-grid-field <?php print ' ' . $contentmodelclass ?>">
         <dt class="solr-grid-thumb">
           <?php
-            $image = '<img src="' . url($result['thumbnail_url'], array('query' => $result['thumbnail_url_params'])) . '" />';
+            $image = '<img src="/sites/all/themes/uvl/img/loading.gif" data-src="' . url($result['thumbnail_url'], array('query' => $result['thumbnail_url_params'])) . '" />';
             print l($image, $result['object_url'], array(
               'html' => TRUE,
               'query' => $result['object_url_params'],

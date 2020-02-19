@@ -5,13 +5,14 @@ Drupal.behaviors.lazyLoadImages = {
   attach: function (context) {
     $('BODY', context).once('lazy-load-images', function () {
       var images = document.querySelectorAll('IMG[data-src]');
-      var config = {
-        root: null,
-        rootMargin: '0px 0px 0px 0px',
-        threshold: 0
-      };
 
       if ('IntersectionObserver' in window) {
+        var config = {
+          root: null,
+          rootMargin: '0px 0px 0px 0px',
+          threshold: 0
+        };
+
         var isVisible = function(entry) {
           var result = entry.isIntersecting;
           if (result === undefined) {

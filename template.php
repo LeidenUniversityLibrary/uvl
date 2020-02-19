@@ -125,6 +125,8 @@ function uvl_preprocess_node(&$vars) {
  * Implements hook_preprocess_page().
  */
 function uvl_preprocess_page(&$vars, $hook) {
+  drupal_add_js(drupal_get_path('theme', 'uvl') . '/js/lazyimages.js', 'file');
+
   // Unsets the ugly drupal message.
   unset($vars['page']['content']['system_main']['default_message']);
 }

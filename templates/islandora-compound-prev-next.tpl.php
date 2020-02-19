@@ -41,8 +41,8 @@
        print l(
        '<div class="dc-grid-pic">'.theme_image(
          array(
-           'path' => $sibling['TN'],
-           'attributes' => array('class' => 'dc-object-fit'),
+           'path' => '/sites/all/themes/uvl/img/loading.gif',
+           'attributes' => array('class' => 'dc-object-fit', 'data-src' => $sibling['TN']),
          )
        ).'</div><h4>'.$sibling['shortlabel'].'</h4>',
        'islandora/object/' . $sibling['pid'],

@@ -1,0 +1,31 @@
+@media all and (min-width: 768px) {
+  body.no-sidebars .islandora-newspaper-object .islandora-newspaper-content {
+    width: 100%;
+  }
+}
+.islandora-newspaper-content fieldset {
+  border: 0;
+}
+.islandora-newspaper-content fieldset .fieldset-wrapper {
+  max-height: 600px;
+  overflow-y: scroll; 
+  overflow-x: none;
+}
+.islandora-newspaper-content fieldset dl {
+  display: inline-block;
+  overflow: initial !important;
+  vertical-align: top; 
+  margin: 1.5em 2%;
+}
+.islandora-newspaper-content fieldset dl dt a img {
+  max-width: 180px;
+  max-height: 180px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+.islandora-newspaper-content fieldset dl dd {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}

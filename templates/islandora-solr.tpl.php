@@ -24,7 +24,7 @@
           <!-- Thumbnail -->
           <td>
 
-              <?php print $result['thumbnail']; ?>
+              <?php print str_replace(' src=', ' src="/sites/all/themes/uvl/img/loading.gif" data-src=', $result['thumbnail']); ?>
 
           </td>
           <!-- Metadata -->

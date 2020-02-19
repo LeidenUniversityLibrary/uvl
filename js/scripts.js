@@ -12,7 +12,7 @@ jQuery(document).ready( function($) {
 	});	
 	
 	// jQuery equiv of object-fit - hide img and set as covering background of its parent 
-	$('.dc-object-fit').each( function() {
+	$('XXX.dc-object-fit').each( function() {
 		
 		var parent = $(this).parent();
 		

@@ -326,6 +326,10 @@ function uvl_preprocess_islandora_book_page(&$variables) {
         'query' => array('token' => $token),
       ));
     // Display large image.
+    $params['token'] = $token;
+    $params['pid'] = $islandora_object->id;
+    $params['dsid'] = 'JP2';
+    // Can be removed after 7.x-1.11 is out the door islandora_deprecated.
     $params['jp2_url'] = $jp2_url;
   }
 

@@ -291,7 +291,7 @@ function uvl_preprocess_islandora_objects_subset(&$variables){
     // Check if there is a node
     if (isset($result['node'])) {
       // If we have a node disable this display.
-      $variables['content'] = array();
+      $variables['content'] = array('#objects' => array());
       $variables['pager'] = array();
       $variables['display_links'] = array();
     }

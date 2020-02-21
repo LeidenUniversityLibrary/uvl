@@ -63,7 +63,8 @@ jQuery(document).ready( function($) {
           }
 
           var viewTab = tabs.find('li').first();
-          var viewButton = viewTab.find('a').clone().insertBefore(tabs.parent()).html('View book').wrap('<DIV/>'); 
+          var viewWhat = (tabs.find('a[href$="issue_pages"]').size() > 0) ? 'View issue' : 'View book';
+          var viewButton = viewTab.find('a').clone().insertBefore(tabs.parent()).html(viewWhat).wrap('<DIV/>'); 
           if (viewTab.is('.active')) {
             viewButton.parent().hide();
           }

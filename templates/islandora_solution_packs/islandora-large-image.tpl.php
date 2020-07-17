@@ -57,7 +57,7 @@
 
       print render($block);
       ?>
-      <?php if ($parent_collections): ?>
+      <?php if (isset($parent_collections)): ?>
       <div>
         <h3 class="dc-sidebox-header"><?php print t('In collections'); ?></h3>
         This item can be found in the following collections:

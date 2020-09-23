@@ -951,6 +951,9 @@ body {
 #thetopmenu li:first-child a {
   border-left: none;
 }
+#themenu #cbp-hrmenu {
+  display: block;
+}
 
 #thefooter {
   padding: 0 15px 60px 15px;

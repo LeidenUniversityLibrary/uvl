@@ -2567,6 +2567,9 @@ dd.solr-value.mods-titleinfo-title-custom-ms ~ dd.solr-value.fgs-label-s {
         line-height:27px;
     }     
 }
+#islandora-collection-search-form #edit-collection-select {
+  max-width: 25em;
+}
 
 /* book buttons */
 .bookNavButton {

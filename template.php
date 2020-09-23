@@ -401,7 +401,7 @@ function uvl_preprocess_islandora_newspaper(array &$variables) {
     );
     $issues = array(
     );
-    $useimagecache = module_exists('islandora_imagecache');
+    $useimagecache = FALSE; //module_exists('islandora_imagecache');
     if ($useimagecache) {
       module_load_include('inc', 'islandora_imagecache', 'includes/utilities');
     }
@@ -423,7 +423,7 @@ function uvl_preprocess_islandora_newspaper(array &$variables) {
               }
             }
             if (!isset($tnpath)) {
-              $tnpath = $dayarray['#path'] . '/datastream/TN/view';
+              $tnpath = '/' . $dayarray['#path'] . '/datastream/TN/view';
             }
             $link = url($dayarray['#path']);
             $text = $dayarray['#text'];

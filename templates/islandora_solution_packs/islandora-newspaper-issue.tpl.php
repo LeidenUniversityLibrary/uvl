@@ -12,8 +12,6 @@
     <div id="book-viewer">
       <?php print $viewer; ?>
     </div>
-  <?php else: ?>
-    <?php print theme('islandora_objects', array('objects' => $pages)); ?>
   <?php endif; ?>
 <div class="dc-sidebox dc-sidebox-right">
       <?php

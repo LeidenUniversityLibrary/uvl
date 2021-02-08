@@ -81,6 +81,15 @@ jQuery(document).ready( function($) {
             }
           });
         }
+
+        $("#block-islandora-solr-sort, #block-islandora-solr-basic-facets, #block-islandora-in-collections-block-islandora-in-collections, #block-uvl-dynamic-search-all-items, #block-menu-block-2, #block-menu-menu-affiliated-collections").each(function() {
+          $(this).find("DIV.content").addClass('ubl-hide-mobile');
+          $(this).find("H3").click(function() {
+            if ($(this).parent().find("DIV.content").is(':hidden') || (window.matchMedia && window.matchMedia('screen and (max-width: 767px)').matches)) {
+              $(this).parent().find("DIV.content").animate({'height' : 'toggle'}, 300);
+            }
+          });
+        });
 });
 
 

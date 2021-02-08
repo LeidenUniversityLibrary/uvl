@@ -1,6 +1,23 @@
 <?php
 
 /**
+ * hook preprocess_html
+ *
+ * Add viewport meta tag.
+ */
+function uvl_preprocess_html(&$vars) {
+  $viewport = array(
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'viewport',
+      'content' => 'width=device-width, initial-scale=1',
+    ),
+  );
+
+  drupal_add_html_head($viewport, 'viewport');
+}
+
+/**
  * Theme override for theme_menu_link()
  */
 function uvl_menu_link($variables) {

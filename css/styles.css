@@ -598,7 +598,7 @@ h6 {
   margin-left: auto;
   margin-right: auto;
 }
-@media all and (min-width: 48em) {
+@media all and (min-width: 768px) {
   .dc-centercontent {
     max-width: 1140px;
     padding-left: 15px;
@@ -646,7 +646,7 @@ body {
   background-color: #fff;
   border-bottom: solid 1px #ccc;
 }
-@media all and (min-width: 48em) {
+@media all and (min-width: 768px) {
   .dc-content {
     padding-left: 3em;
     padding-right: 3em;
@@ -657,7 +657,7 @@ body {
     border-bottom: none;
   }
 }
-@media all and (min-width: 63.75em) {
+@media all and (min-width: 768px) {
   .dc-sidebar ~ .dc-content {
     width: calc(75% - 40px);
   }
@@ -672,7 +672,7 @@ body {
 .dc-sidebar {
   padding: 20px;
 }
-@media all and (min-width: 63.75em) {
+@media all and (min-width: 768px) {
   .dc-sidebar {
     padding-top: 0;
     padding-bottom: 120px;
@@ -708,7 +708,7 @@ body {
   border-bottom: solid 1px #ddd;
 }
 
-@media all and (min-width: 63.75em) {
+@media all and (min-width: 768px) {
   .dc-sidebox {
     width: calc(30% - 40px);
   }
@@ -850,7 +850,7 @@ body {
 }
 
 
-@media all and (min-width:63.75em) {
+@media all and (min-width:768px) {
   .islandora-compound-prev-next--hierarchical.table-of-contents {
     width: calc(30% - 40px);
     float: right;
@@ -1023,7 +1023,7 @@ body {
   margin-bottom: 0.40625em;
   text-align: center;
 }
-@media all and (min-width: 48em) {
+@media all and (min-width: 768px) {
   .dc-searchresults-pager {
     text-align: right;
   }
@@ -1134,7 +1134,7 @@ body {
   padding-top: 1.625em;
   padding-bottom: 1.625em;
 }
-@media all and (min-width: 48em) {
+@media all and (min-width: 500px) {
   .dc-results td {
     display: table-cell;
     border-bottom: solid 1px #ccc;
@@ -1151,7 +1151,7 @@ body {
   min-height: 150px;
   width: 150px;
 }
-@media all and (min-width: 48em) {
+@media all and (min-width: 500px) {
   .dc-results td:first-child {
     padding-top: 1.625em;
     padding-bottom: 1.625em;
@@ -1419,7 +1419,7 @@ div#BRpage {
   margin: 0 !important;
 }
 
-@media (min-width: 48em) {
+@media all and (min-width: 768px) {
   .dc-searchresults-pager {
     text-align: right !important;
   }
@@ -1657,7 +1657,7 @@ div#BookReader #BRtoolbarbuttons BUTTON.share {
   margin-top: 1em;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .dc-menu .dc-centercontent {
     padding: 0;
   }
@@ -1691,7 +1691,7 @@ div#BookReader #BRtoolbarbuttons BUTTON.share {
   }
 
   .cbp-hrmenu > ul > li {
-    display: block;
+    display: inline-block;
     border-bottom: 1px solid #8088ac;
   }
 
@@ -1701,6 +1701,14 @@ div#BookReader #BRtoolbarbuttons BUTTON.share {
 
   .cbp-hrmenu .cbp-hrsub {
     position: relative;
+  }
+
+  .cbp-hrmenu > ul > li > a {
+    padding: 0.5em;
+  }
+
+  .cbp-hrmenu > ul > li.dc-menu-search {
+    padding-top: 0;
   }
 
   .cbp-hrsub h4 {
@@ -1745,7 +1753,7 @@ div#BookReader #BRtoolbarbuttons BUTTON.share {
   white-space: nowrap;
 }
 
-@media all and (min-width: 63.75em) {
+@media all and (min-width: 768px) {
   .dc-feature-bg {
     background-color: #e3e3e3;
     height: 560px;
@@ -1763,7 +1771,7 @@ div#BookReader #BRtoolbarbuttons BUTTON.share {
   overflow: hidden;
   position: relative;
 }
-@media all and (min-width: 63.75em) {
+@media all and (min-width: 768px) {
   .dc-feat-banner {
     height: 350px;
   }
@@ -1794,12 +1802,12 @@ div#BookReader #BRtoolbarbuttons BUTTON.share {
   font-size: 2.197em;
   line-height: 1.47929em;
 }
-@media all and (min-width: 63.75em) {
+@media all and (min-width: 768px) {
   .dc-feat-banner .dc-feat-desc h2 {
     color: #eee;
   }
 }
-@media all and (min-width: 63.75em) {
+@media all and (min-width: 768px) {
   .dc-feat-banner .dc-feat-desc {
     background: #666;
     color: #ddd;
@@ -1818,7 +1826,7 @@ div#BookReader #BRtoolbarbuttons BUTTON.share {
   position: relative;
   height: 300px;
 }
-@media all and (min-width: 63.75em) {
+@media all and (min-width: 768px) {
   .dc-feat-banner .dc-feat-pic {
     height: 100%;
   }
@@ -2402,7 +2410,7 @@ html {
   text-decoration: underline;
 }
 
-@media all and (min-width:63.75em) {
+@media all and (min-width: 768px) {
   .islandora-ead-object .ead-toc {
     width: calc(30% - 40px);
     float: right;
@@ -2477,6 +2485,12 @@ html {
 @media all and (max-width:430px) {
   .dc-feat-banner IMG {
     max-height: 165px;
+  }
+  .dc-feat-banner .dc-feat-pic {
+    height: auto;
+  }
+  #block-uvl-blocks-uvl-blocks-collection-images .dc-feat-browser .dc-feat-more {
+    width: 165px;
   }
   .dc-feat-browser UL LI.views-row:nth-last-child(2),
   .dc-feat-browser UL LI.views-row:nth-last-child(3),
@@ -2592,4 +2606,73 @@ dd.solr-value.mods-titleinfo-title-custom-ms ~ dd.solr-value.fgs-label-s {
 }
 .bookNavButton:hover {
   background-color: #626c95;
+}
+
+@media screen and (max-width: 768px) {
+  #theheader h1 em {
+    font-size: 180%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #themenu .dc-menu-search form {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  #cbp-hrmenu ul.menu li.dc-menu-search {
+    float: left;
+  }
+  FORM#islandora-collection-search-form .form-item-collection-select SELECT {
+    width: 120px;
+  }
+  FORM#islandora-collection-search-form .form-item-islandora-simple-search-query INPUT {
+    width: 120px;
+  }
+  .dc-sidebar {
+    margin-top: 0;
+    padding: 5px 20px;
+  }
+
+   /* Top of page */
+  #thetitle .dc-logo {
+    margin: 10px 0 10px 0;
+    float: left;
+    padding: 0;
+  }
+  #thetitle .dc-logo IMG {
+    height: 50px;
+  }
+  #themenu {
+    margin-top: 0;
+  }
+  #themenu nav ul li a {
+    line-height: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .ubl-hide-mobile {
+    display: none;
+  }
+  .pager span,
+  .pager a {
+    padding: 8px 5px;
+  }
+  .item-list .pager {
+    text-align: initial;
+  }
+}
+.islandora-solr-search-results .islandora-inline-metadata dd {
+  width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+  .islandora-metadata TABLE.islandora-metadata-fields TH,
+  .islandora-metadata TABLE.islandora-metadata-fields TD {
+    display: block;
+    width: 100%;
+  }
+  .islandora-metadata TABLE.islandora-metadata-fields TH {
+    color: gray;
+  }
 }

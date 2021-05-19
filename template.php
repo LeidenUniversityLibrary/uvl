@@ -433,6 +433,7 @@ function uvl_preprocess_islandora_newspaper(array &$variables) {
         $days = element_children($tabs[$year][$month]);
         foreach ($days as $day) {
           foreach ($tabs[$year][$month][$day] as $dayarray) {
+            $tnpath = NULL;
             if ($useimagecache) {
               $object = menu_get_object('islandora_object', 2, $dayarray['#path']);
               if ($object) {

@@ -2,7 +2,9 @@
 (function ($) {
 
 Drupal.behaviors.lazyLoadImages = {
-  attach: function (context) {
+  attach: function (context, settings) {
+    var tnaccessretrictedurl = settings.conditional_access_rights.tn_access_restricted;
+
     $('BODY', context).once('lazy-load-images', function () {
       var images = document.querySelectorAll('IMG[data-src]');
 
@@ -34,6 +36,9 @@ Drupal.behaviors.lazyLoadImages = {
             if (isVisible(entry)) {
               var src = entry.target.getAttribute('data-src');
               if (src) {
+                $(entry.target).on("error", function() {
+                    $(this).unbind("error").attr("src", tnaccessretrictedurl);
+                });
                 entry.target.src = src;
               }
               self.unobserve(entry.target);

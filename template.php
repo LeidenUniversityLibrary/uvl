@@ -487,6 +487,9 @@ function uvl_preprocess_islandora_newspaper_page(array &$variables) {
       $variables['issue_object_id'] = $parent->id;
       $variables['issue_object_label'] = $parent->label;
     }
+    else {
+      $variables['issue_object_label'] = 'None';
+    }
   }
 }
 

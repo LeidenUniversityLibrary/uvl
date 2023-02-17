@@ -8,7 +8,7 @@
  */
 ?>
 
-<div class="islandora-basic-image-object islandora" vocab="http://schema.org/" prefix="dcterms: http://purl.org/dc/terms/" typeof="ImageObject">
+<div class="islandora-basic-image-object islandora">
   <div class="islandora-basic-image-content-wrapper clearfix islandora-viewer">
     <?php if (isset($islandora_content)): ?>
       <div class="islandora-basic-image-content">

@@ -22,7 +22,7 @@
  */
 ?>
 <section class="dc-viewer">
-  <div class="islandora-large-image-object islandora" vocab="http://schema.org/" prefix="dcterms: http://purl.org/dc/terms/" typeof="ImageObject">
+  <div class="islandora-large-image-object islandora">
     <div class="islandora-large-image-content-wrapper clearfix islandora-viewer">
       <?php if ($islandora_content): ?>
         <?php if (isset($image_clip)): ?>

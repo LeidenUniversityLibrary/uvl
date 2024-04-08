@@ -25,7 +25,7 @@
   </div>
 <?php endif; ?>
   <div class="islandora-newspaper-content-wrapper clearfix">
-    <?php if ($content): ?>
+    <?php if (isset($content)): ?>
       <div class="islandora-newspaper-content">
         <?php print $content; ?>
       </div>

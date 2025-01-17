@@ -78,4 +78,24 @@
          </ul>
       <?php endif; ?>
 
+      <?php $part_of_album_block = views_embed_view('part_of_photo_album_view', 'default'); ?>
+      <?php $album_parts_block = views_embed_view('photo_album_parts_view', 'default'); ?>
+      <?php if ($part_of_album_block && strpos($part_of_album_block, '<span class="field-content album-button"></span>') === FALSE && strpos($part_of_album_block, '<span class="field-content album-button">') !== FALSE): ?>
+         <h3 class="dc-sidebox-header"><?php print t('Photo album'); ?></h3>
+         Show more items in this photo album:
+         <ul class="dc-related-searches">
+           <li>
+             <?php print $part_of_album_block; ?>
+           </li>
+         </ul>
+      <?php elseif ($album_parts_block && strpos($album_parts_block, '<span class="field-content album-button"></span>') === FALSE && strpos($album_parts_block, '<span class="field-content album-button">') !== FALSE): ?>
+         <h3 class="dc-sidebox-header"><?php print t('Photo album'); ?></h3>
+         Show more items in this photo album:
+         <ul class="dc-related-searches">
+           <li>
+             <?php print $album_parts_block; ?>
+           </li>
+         </ul>
+      <?php endif; ?>
+
 </div>

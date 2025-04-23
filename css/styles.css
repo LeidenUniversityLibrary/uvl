@@ -1967,6 +1967,7 @@ div#BookReader #BRtoolbarbuttons BUTTON.share {
   font-size: 1.3em;
   line-height: 1.25em;
   text-align: center;
+  text-wrap-mode: wrap;
 }
 
 .dc-grid {
